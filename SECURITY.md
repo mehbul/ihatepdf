@@ -1,14 +1,14 @@
 # Security policy
 
-FolioCove is a public beta browser PDF workspace. Documents are processed on the user's device; the application does not provide a document-upload endpoint. This architecture does not establish that every output is safe to share, or that the application has a security certification.
+iHatePDF is a public beta browser PDF workspace. Documents are processed on the user's device; the application does not provide a document-upload endpoint. This architecture does not establish that every output is safe to share, or that the application has a security certification.
 
 ## Reporting status
 
-Checked 8 October 2026: GitHub private vulnerability reporting is **enabled** for this repository. Use [Report a vulnerability](https://github.com/mehbul/ihatepdf/security/advisories/new) for suspected security problems. A GitHub account is required. The report uses GitHub's private advisory workflow; it is not a public issue or a general support inbox.
+Checked 24 October 2026 through GitHub's repository API: private vulnerability reporting is **enabled**. Use [Report a vulnerability](https://github.com/mehbul/ihatepdf/security/advisories/new) for suspected security problems. A GitHub account is required. The report uses GitHub's private advisory workflow; it is not a public issue or a general support inbox.
 
 Do not put exploit details, customer files, personal information, credentials, or secrets in a public issue. For a suspected security problem, preserve your original file and stop using the affected workflow. Submit the smallest synthetic reproduction through the private report channel; do not attach real documents or secrets even there. Describe the affected tool, browser/version, reproduction steps, impact, and expected versus actual behavior.
 
-A verified private support email has not been configured. The security-report channel does not replace that pending general-contact option or establish a response-time commitment.
+General non-sensitive support is available at the owner-authorized mehbulislam81@gmail.com address and through the [support page](https://mehbul.github.io/ihatepdf/support/). This is not a dedicated vulnerability-reporting inbox; use the private advisory channel for security problems. No response-time commitment is promised.
 
 Ordinary non-sensitive failures can be reported through [GitHub Issues](https://github.com/mehbul/ihatepdf/issues/new/choose) using synthetic examples. GitHub Issues is public and is not a private support inbox. An account is required to submit an issue.
 

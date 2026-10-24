@@ -1,65 +1,35 @@
-# Private beta validation
+# iHatePDF validation
 
-## Generated-bundle verification
+Review date: 24 October 2026. Public beta: https://mehbul.github.io/ihatepdf/.
+See [the engineering review](docs/2026-10-24-engineering-review.md) for this release's findings and final test results.
 
-Command: `npm test`
+## Builds and automated coverage
 
-Passed:
-- Main script, launch module and service worker parse successfully.
-- Ten dedicated tool routes and five documentation routes exist.
-- Tool-specific controls initialize for direct selection.
-- Metrics expose only tool ID, outcome and duration.
-- Page-range validation accepts valid ranges and rejects invalid ones.
-- 77 generated-bundle application-handler executions cover merge, extract, add text, typed signature, rotation, numbering and reversal across ten generated PDFs, plus malformed-input rejection for each handler.
-- Generated output PDFs reopen and have the expected page counts.
-- Spreadsheet-to-PDF generated-bundle regressions cover both XLSX and legacy OLE/BIFF XLS fixtures.
+- `npm run build`: private root build; 19 dedicated tool routes and five information routes. Its `noindex,nofollow` policy is intentional.
+- `npm test`: 77 generated-handler executions across ten synthetic PDFs, malformed-input rejection, range validation, route initialization, XLS/XLSX conversion, image-to-PDF layout rules and mocked IndexNow submission/state handling.
+- `node scripts/test-ai-readiness.mjs`: all 88 registry entries, capabilities, knowledge files and private-build metadata consistency.
+- `npm run test:e2e`: Chromium workflows, file ordering, conversion appearance, image filters/cropping/page layout, prepared downloads, tool handoff, malformed-input handling and unsupported-AI behavior. Public-only checks skip in the private build; network-dependent OCR runs separately.
+- `npx playwright test --config=playwright.pages.config.mjs`: the public Pages build at `/ihatepdf/`, including indexable pages, canonical URLs, static task instructions, published samples, public ownership proof, guide links and actual synthetic downloads.
+- `npx playwright test --config=playwright.pilot.config.mjs`: selected Android Chromium, iPhone WebKit and desktop WebKit workflows. These are browser-engine/emulation tests.
+- `node scripts/audit-catalog.mjs` against the local server: one representative synthetic input per catalog tool. It records parsed artifacts, visible outcomes, page errors and network-guard observations in ignored `test-results/launch-catalog/report.json`. A parseable PDF does not establish fidelity or safety.
 
-## Browser E2E verification
+Browser network guards reject unexpected external requests and synthetic document-marker leakage in the workflows where installed. OCR has a documented language-model download allowance. This evidence is scoped to exercised cases; local processing does not mean zero asset/model network traffic.
 
-Command: `npm run test:e2e`
+## Current product boundaries
 
-Passed in Playwright-managed Chromium:
-- All ten dedicated routes load directly: Merge PDFs, Extract pages, Visual page organizer, Compress to target size, Camera document scanner, Searchable OCR PDF, Edit PDF, Sign PDF, Secure redact, and Privacy Inspector.
-- Each route selects the expected tool, exposes expected controls, preserves `noindex,nofollow`, and produces no uncaught page errors.
-- Synthetic happy-path downloads are verified by opening/parsing the resulting artifacts:
-  - Merge: two synthetic PDFs become a three-page PDF.
-  - Split: pages 2-3 are extracted and expected marker text remains present.
-  - Visual organizer: page order changes and the downloaded PDF remains parseable.
-  - Target compression: downloaded PDF remains parseable with expected page count.
-  - PDF.js decoder assets: a deterministic CCITT scanned-image PDF renders through the browser to a PNG ZIP, and the downloaded PNG contains non-white decoded scan pixels.
-  - Camera scanner/photo-to-PDF: a generated PNG document photo becomes a one-page PDF.
-  - Edit PDF: added text is extractable from the downloaded PDF.
-  - Typed sign: typed signature text is extractable from the downloaded PDF.
-  - Redact: rasterized redaction output opens and the synthetic target text is not extractable.
-  - Privacy Inspector: metadata is reported and the sanitized copy opens with title/author cleared.
-- Unsupported TXT input for a PDF workflow produces a clear error and no download.
-- Malformed PDF input produces an error and no misleading download.
-- During processing, the network guard fails on any external request except the documented OCR English-model GET, and it fails on request URL/body leakage of synthetic filenames, unique document markers, or OCR fixture text. Same-origin assets, blob URLs, and data URLs remain allowed. No violations were observed in the passing runs.
+Privacy Inspector produces a read-only report. It does **not** create a verified sanitized copy. Verified sanitization and validated PDF/A are unavailable. Redaction is experimental and requires independent inspection. On-device AI depends on browser APIs and model availability.
 
-Command: `npm run test:e2e:installed`
+Image-to-PDF supports ordering, per-image edits and shared paper/export settings. Its generated files are checked for page dimensions, numbering and filter pixels. Prepared-download handoff stays in memory; reloading clears selected files and unsaved settings.
 
-Passed on installed Windows desktop browsers:
-- Google Chrome: 20 deterministic E2E tests passed; OCR model-dependent test skipped.
-- Microsoft Edge: 20 deterministic E2E tests passed; OCR model-dependent test skipped.
+Public Pages is indexable. The separate private Sites host retains private access and private-build indexing policy. Successful deployment, a submitted sitemap or an IndexNow receipt does not prove search indexing or ranking.
 
-Command: `npm run test:e2e:ocr`
+## Remaining evidence gaps
 
-Passed in Playwright-managed Chromium:
-- Searchable OCR accepted a synthetic PDF, fetched any required English model data only through the documented Tesseract model host allowance, downloaded `searchable-ocr.pdf`, and the output opened as a one-page PDF.
+- Actual Android/iPhone camera capture, native download/open flows and Apple's Safari application.
+- OCR accuracy across real languages/layouts; handwriting and universal text reconstruction are not promised.
+- Fidelity for arbitrary complex Office documents, huge/malformed archives and every possible PDF structure.
+- Independent redaction/sanitization assurance, security certification or a penetration test.
+- Unaided user completion, satisfaction and production performance on representative low-memory physical devices.
+- Legal review and provider decisions about crawling, indexing or ranking.
 
-## Defects found and fixed
-
-- Visual organizer thumbnails could render while the Apply button stayed disabled because PDF.js cleanup ran before restoring the user-visible action state. The handler now re-enables the action as soon as organizer state is valid, then performs PDF.js cleanup best-effort.
-
-## Pending / NOT verified
-
-- Safari, mobile browsers, Android Chrome, iOS Safari, and camera hardware capture.
-- Visual fidelity of compression, scanner enhancement, edit placement, signature placement, redaction appearance, and organized-page thumbnails.
-- OCR accuracy beyond the parseable-output smoke test.
-- Compression quality or guaranteed target-size achievement.
-- Redaction security beyond non-extractability of the synthetic target text in one automated case.
-- Full sanitization/security audit of every hidden-data structure.
-- Password-protected documents and severely corrupted files beyond one malformed PDF check.
-- Human pilot tester completion, unaided completion rate, operator identity/contact, privacy/terms legal review, public launch approval, sitemap/indexing changes, and remote analytics decisions.
-
-Private access and noindex are intentionally retained. The old cache-first service worker remains retired; old FolioCove shell caches are cleared on activation. This removes cached app shells, not user documents. Full offline support is not claimed.
+Older dated audits under `docs/` remain historical evidence. Do not transfer their browser counts, branding or search observations to the current release without a fresh check.

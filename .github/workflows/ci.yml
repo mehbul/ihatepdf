@@ -32,6 +32,9 @@ jobs:
       - name: Unit and bundle tests
         run: npm test
 
+      - name: Validate tool capabilities and machine-readable documentation
+        run: node scripts/test-ai-readiness.mjs
+
       - name: Browser E2E tests
         run: npm run test:e2e
 

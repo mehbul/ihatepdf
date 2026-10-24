@@ -4,7 +4,7 @@ import path from 'node:path';
 import JSZip from 'jszip';
 import {PDFDocument} from 'pdf-lib';
 import {createPdf,makeFixtureDir,runAndSaveDownload,pdfText} from './helpers.mjs';
-async function choose(page,id,file){await page.goto('/');await page.locator('#tool-filter').selectOption('all');await page.locator(`[data-tool="${id}"]`).click();await page.getByTestId('file-input').setInputFiles(file);}
+async function choose(page,id,file){await page.goto('/');await expect(page.getByTestId('file-input')).toBeEnabled();await page.locator('#tool-filter').selectOption('all');await page.locator(`[data-tool="${id}"]`).click();await page.getByTestId('file-input').setInputFiles(file);}
 test('unavailable local AI models report limitations without creating downloads',async({page})=>{
  await page.addInitScript(()=>{for(const key of ['Summarizer','Translator'])Object.defineProperty(globalThis,key,{configurable:true,value:{availability:async()=> 'unavailable',create:async()=>{throw Error('Unavailable model must not be created');}}});});
  const dir=await makeFixtureDir(),file=await createPdf(path.join(dir,'source.pdf'),['LOCAL AI CHECK']);let downloads=0;page.on('download',()=>downloads++);

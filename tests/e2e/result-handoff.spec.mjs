@@ -7,6 +7,7 @@ test('A merged PDF passes through page organization and lossless compression wit
  const dir=await makeFixtureDir(),a=await createPdf(path.join(dir,'first.pdf'),['FLOW-A','FLOW-B']),b=await createPdf(path.join(dir,'second.pdf'),['FLOW-C']);
  const guards=installPageGuards(page,['FLOW-A','FLOW-B','FLOW-C']);
  await page.goto(base+'/merge-pdf/');await expect(page.getByTestId('file-input')).toBeEnabled();
+ const originalHeading=await page.locator('.intro h1').textContent(),originalTitle=await page.title();
  await page.getByTestId('file-input').setInputFiles([a,b]);const merged=await runAndSaveDownload(page,dir,'merged.pdf');
  expect(await pdfPageCount(merged)).toBe(3);
  const panel=page.getByRole('region',{name:'Prepared download'});
@@ -15,6 +16,12 @@ test('A merged PDF passes through page organization and lossless compression wit
  await panel.getByLabel('Next PDF tool').selectOption('visualorganize');
  await panel.getByRole('button',{name:'Use this PDF',exact:true}).click();
  await expect(page.getByTestId('tool-title')).toHaveText('Visual page organizer');await expect(page.getByTestId('tool-title')).toBeFocused();
+ await expect(page.locator('.intro h1')).toHaveText('Visual page organizer');
+ await expect(page).toHaveTitle('Visual page organizer — iHatePDF');
+ if(process.env.FOLIOCOVE_PAGES_TEST){
+  await expect(page.locator('.task-breadcrumbs [aria-current="page"]')).toHaveText('Visual page organizer');
+  await expect(page.getByRole('region',{name:'Merge PDFs guide',exact:true})).toBeHidden();
+ }
  await expect(panel).toBeHidden();await expect(page.locator('#files .file-name')).toHaveText(['merged.pdf']);
  await expect(page.getByTestId('page-thumb')).toHaveCount(3);await expect(page.getByTestId('run-tool')).toBeEnabled();
  expect(await page.evaluate(async url=>{try{await fetch(url);return true}catch{return false}},originalUrl)).toBe(false);
@@ -26,6 +33,9 @@ test('A merged PDF passes through page organization and lossless compression wit
  await expect(page.locator('#files .file-name')).toHaveText(['visually-organized.pdf']);await expect(panel).toBeHidden();
  const compressed=await runAndSaveDownload(page,dir,'lossless.pdf');expect(await pdfPageCount(compressed)).toBe(2);
  const text=await pdfText(compressed);expect(text).not.toContain('FLOW-A');expect(text.indexOf('FLOW-B')).toBeGreaterThanOrEqual(0);expect(text.indexOf('FLOW-C')).toBeGreaterThan(text.indexOf('FLOW-B'));
+ await page.locator('[data-tool="merge"]').click();
+ await expect(page.locator('.intro h1')).toHaveText(originalHeading);await expect(page).toHaveTitle(originalTitle);
+ if(process.env.FOLIOCOVE_PAGES_TEST){await expect(page.getByRole('region',{name:'Merge PDFs guide',exact:true})).toBeVisible();await expect(page.locator('.task-breadcrumbs [aria-current="page"]')).toHaveText('Merge PDFs');}
  expectNoGuardViolations(guards);
 });
 

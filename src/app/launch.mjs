@@ -80,6 +80,12 @@ function initSampleTrial(api){
 }
 export function initLaunch(api){
  const pageTitle=document.title;
+ const routeContext=document.documentElement.dataset.toolId;
+ const intro=document.querySelector('.intro h1'),introCopy=document.querySelector('.intro h1 + p');
+ const originalHeading=intro?.textContent,originalCopy=introCopy?.textContent;
+ const breadcrumb=document.querySelector('.task-breadcrumbs [aria-current="page"]');
+ const originalBreadcrumb=breadcrumb?.textContent;
+ const routeGuides=routeContext?[...document.querySelectorAll('main > .search-guide')]:[];
  const $=id=>document.getElementById(id), status=$('status'),go=$('go');
  initSampleTrial(api);
  const read=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}},write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch{}};
@@ -127,7 +133,16 @@ export function initLaunch(api){
  const record=(tool,outcome,ms)=>{if(!$('metrics-optin').checked)return;const a=read('privypdf-beta-metrics',[]);a.push(safeMetric(tool,outcome,ms));write('privypdf-beta-metrics',a.slice(-1000));summary()};
  $('clear-metrics').onclick=()=>{write('privypdf-beta-metrics',[]);summary()};
  $('export-metrics').onclick=()=>{const blob=new Blob([JSON.stringify(read('privypdf-beta-metrics',[]),null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='foliocove-beta-metrics.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),2000)};summary();
- const showLimit=()=>{const tool=api.current();$('tool-limit').textContent=notices[tool]||'Private beta. Keep your original and inspect the output. Large, malformed or password-protected files may fail.';document.title=new URLSearchParams(location.search).has('tool')?(api.configs[tool]?.title||'PDF tools')+' — '+document.documentElement.dataset.productName:pageTitle;document.querySelectorAll('#options input,#options select,#options textarea').forEach(el=>{if(!el.getAttribute('aria-label')&&!el.labels?.length){el.setAttribute('aria-label',el.previousElementSibling?.textContent||el.placeholder||el.id)}})};
+ const showLimit=()=>{const tool=api.current(),config=api.configs[tool],changedRoute=routeContext&&tool!==routeContext;$('tool-limit').textContent=notices[tool]||'Private beta. Keep your original and inspect the output. Large, malformed or password-protected files may fail.';
+  document.title=changedRoute||new URLSearchParams(location.search).has('tool')?(config?.title||'PDF tools')+' — '+document.documentElement.dataset.productName:pageTitle;
+  if(routeContext){
+   if(intro)intro.textContent=changedRoute?config.title:originalHeading;
+   if(introCopy)introCopy.textContent=changedRoute?config.copy:originalCopy;
+   if(breadcrumb)breadcrumb.textContent=changedRoute?config.title:originalBreadcrumb;
+   // Static instructions belong to the original route, not a handed-off PDF.
+   for(const guide of routeGuides)guide.hidden=Boolean(changedRoute);
+  }
+  document.querySelectorAll('#options input,#options select,#options textarea').forEach(el=>{if(!el.getAttribute('aria-label')&&!el.labels?.length){el.setAttribute('aria-label',el.previousElementSibling?.textContent||el.placeholder||el.id)}})};
  document.addEventListener('privypdf:tool',showLimit);
  // Old per-button option handlers still exist; run after them to label fresh controls.
  document.querySelector('.sidebar').addEventListener('click',()=>queueMicrotask(showLimit));

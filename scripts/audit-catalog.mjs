@@ -21,6 +21,8 @@ const rtf=path.join(dir,'input.rtf');await fs.writeFile(rtf,`{\\rtf1\\ansi ${mar
 const toolkit=await createPdfToolkit({wasmModule:await WebAssembly.compile(await fs.readFile('node_modules/pdfstudio/dist/wasm/qpdf.wasm'))});const locked=path.join(dir,'locked.pdf');await fs.writeFile(locked,await toolkit.lock(await fs.readFile(pdfPath),{userPassword:'audit-password'}));
 const browser=await chromium.launch(),page=await browser.newPage({acceptDownloads:true});const guards=installPageGuards(page,[marker,'audit-marker-74291.pdf']);
 await page.goto('http://127.0.0.1:4173/');await page.waitForFunction(()=>document.querySelectorAll('.tool').length===88);
+await page.waitForFunction(()=>!document.getElementById('picker').disabled);
+await page.locator('#tool-filter').selectOption('all');
 const image=path.join(dir,'image.png');await fs.writeFile(image,Buffer.from(await page.evaluate(()=>{const c=document.createElement('canvas');c.width=c.height=300;const ctx=c.getContext('2d');ctx.fillStyle='white';ctx.fillRect(0,0,300,300);ctx.fillStyle='black';ctx.font='24px sans-serif';ctx.fillText('LOCAL AUDIT',20,100);return c.toDataURL('image/png').split(',')[1];}),'base64'));
 const tools=await page.locator('.tool').evaluateAll(nodes=>nodes.map(el=>({id:el.dataset.tool,label:el.textContent.trim()})));const results=[];
 const inputs={'edit-text':'Audit note','sign-name':'Audit Signer','header-text':'Audit header','find-query':'Project','quick-command':'rotate 90, add page numbers','qr-value':'AUDIT-REFERENCE','form-values':'Full Name = Test Person','pdf-question':'When is payment due?','field-name':'New field','local-password':'audit-password','confirm-password':'audit-password'};
@@ -37,9 +39,9 @@ for(const tool of tools){
   for(const [i,download] of downloads.entries()){const name=download.suggestedFilename(),target=path.join(dir,`${tool.id}-${i}-${name}`);await download.saveAs(target);const bytes=await fs.readFile(target);if(name.endsWith('.pdf')){if(tool.id==='protect'){parsed.push({format:'PDF',encrypted:(await toolkit.requiresPassword(bytes))});}else parsed.push({format:'PDF',pages:(await PDFDocument.load(bytes)).getPageCount()});}else if(/\.(zip|docx|xlsx|pptx)$/.test(name)){const zip=await JSZip.loadAsync(bytes);parsed.push({format:path.extname(name),entries:Object.keys(zip.files).length});}else parsed.push({format:path.extname(name),bytes:bytes.length});}
   const expected=tool.id==='sanitize'||(['aisummary','translate'].includes(tool.id)&&state.class.includes('error'));
   const outcome=state.class.includes('error')?(expected?'expected-limitation':'failed'):downloads.length?'output-parseable':'status-only';results.push({...tool,outcome,seconds:(Date.now()-start)/1000,state,outputs:parsed});
- }catch(error){results.push({...tool,outcome:'audit-error',error:error.message.split('\n')[0]});await page.reload();await page.waitForFunction(()=>document.querySelectorAll('.tool').length===88);}
+ }catch(error){results.push({...tool,outcome:'audit-error',error:error.message.split('\n')[0]});await page.reload();await page.waitForFunction(()=>document.querySelectorAll('.tool').length===88&&!document.getElementById('picker').disabled);await page.locator('#tool-filter').selectOption('all');}
  finally{page.off('download',listener);}
  console.log(tool.id,results.at(-1).outcome);
 }
-const report={date:'2026-10-02',scope:'One synthetic representative input per catalog tool; parseability does not establish fidelity or edge-case correctness.',results,pageErrors:guards.pageErrors,networkViolations:guards.networkViolations};
+const report={date:new Date().toISOString(),scope:'One synthetic representative input per catalog tool; parseability does not establish fidelity or edge-case correctness.',results,pageErrors:guards.pageErrors,networkViolations:guards.networkViolations};
 await fs.writeFile(path.join(dir,'report.json'),JSON.stringify(report,null,2));await browser.close();console.log(JSON.stringify(results.reduce((acc,r)=>(acc[r.outcome]=(acc[r.outcome]||0)+1,acc),{})));
