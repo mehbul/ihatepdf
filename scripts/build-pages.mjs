@@ -3,6 +3,7 @@ import './build.mjs';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {site} from '../src/content/site.mjs';
+import {searchDiscovery} from '../src/content/search-discovery.mjs';
 import {toolRoutes,pages} from '../src/content/routes.mjs';
 import {buildDiscovery} from '../src/content/discovery.mjs';
 import {buildBlog} from '../src/content/blog.mjs';
@@ -61,4 +62,8 @@ const urls=['',...toolRoutes.map(x=>x[1]),...Object.keys(pages),'tools','demo','
 await fs.writeFile('dist/sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls.map(slug=>`<url><loc>${origin}/${slug?slug+'/':''}</loc></url>`).join('\n')+'\n</urlset>\n');
 // robots.txt belongs at the host root; this project copy is informational.
 await fs.writeFile('dist/robots.txt',`User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
+// Ownership proofs are published only by the public Pages build.
+const publicHome=await fs.readFile('dist/index.html','utf8');
+await fs.writeFile('dist/index.html',publicHome.replace('</head>',`<meta name="msvalidate.01" content="${searchDiscovery.bingVerification}"></head>`));
+await fs.writeFile(`dist/${searchDiscovery.indexNowKey}.txt`,searchDiscovery.indexNowKey+'\n');
 console.log('Prepared indexable GitHub Pages beta at '+origin+'/ with sitemap.');

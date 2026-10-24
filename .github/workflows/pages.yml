@@ -42,3 +42,31 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v5.0.1
+
+  notify-search:
+    needs: deploy
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: 24
+      - name: Restore previous public page fingerprints
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .cache/search/indexnow.json
+          key: indexnow-pages-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: indexnow-pages-
+      - name: Notify IndexNow of changed public URLs
+        id: indexnow
+        continue-on-error: true
+        run: node scripts/submit-indexnow.mjs --submit
+      - name: Save accepted notification fingerprints
+        if: steps.indexnow.outcome == 'success'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .cache/search/indexnow.json
+          key: indexnow-pages-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Report notification failure without rolling back the site
+        if: steps.indexnow.outcome == 'failure'
+        run: echo "::warning::Site deployed, but IndexNow notification failed. Review the notification step before retrying."

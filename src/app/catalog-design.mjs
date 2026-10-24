@@ -1,5 +1,5 @@
 const cards={
- images:['scan',null,'image','Turn JPG and PNG images into PDF pages.','One image per page','Images to PDF'],
+ images:['scan',null,'image','Arrange pictures, apply filters and choose PDF layout.','One image per page','Images to PDF'],
  protect:['proposal',null,'lock-simple','Keep a document behind a password.','AES-256','Protect PDF'],
  unlock:['proposal',null,'lock-simple-open','Open a password-protected document.','Password needed','Unlock PDF'],
  lossless:['invoice',null,'arrows-in-simple','Reduce size while keeping selectable text.','Lossless','Lossless compression'],
