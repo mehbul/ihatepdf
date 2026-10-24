@@ -18,6 +18,14 @@ Official references: [IndexNow documentation](https://www.indexnow.org/documenta
 
 Commands: `npm test` covers submission scope, duplicate handling, unchanged-page suppression, dry runs and failed-notification state recovery without contacting search engines. `node scripts/submit-indexnow.mjs --dry-run` validates live public pages without submitting. `--submit` is an explicit network notification. Do not describe a successful build as completed Bing verification: finish Verify and submit the sitemap in Bing after the ownership tag is live.
 
+### Completed provider checks on 24 October
+
+- Bing HTML verification completed after release `452249e`; the application dashboard became available. One submission of `https://mehbul.github.io/ihatepdf/sitemap.xml` appeared in Bing's sitemap table as Submitted / Processing, with zero URLs discovered at that time. Bing said initial reports can take up to 48 hours. This is ownership and submission evidence, not indexing evidence.
+- The post-deployment notification job checked 41 public sitemap pages and received IndexNow HTTP 202 for 41 URLs. Ownership validation was pending. The accepted fingerprints were cached for later deployments.
+- All 53 Pages browser checks and the independent CI workflow passed. The new guide, guide link in llms.txt, sitemap entry, Bing tag and ownership file were verified on the public host.
+- A refreshed Google session retried the failed homepage request once. Google again reported a reCAPTCHA service connection error; neither attempt was accepted. Search Console was left open for an owner-operated retry. Do not resubmit automatically or claim this request reached Google's indexing queue.
+- The host-root robots file allows public crawlers and points to the current sitemap. No additional search-account credentials, private-file collection, paid service, fabricated traffic or external outreach was introduced.
+
 ## Current evidence and next decision
 
 The bounded Google audit on 10 October 2026 (00:01–00:09 IST) checked 22 queries in a signed-out browser with English, India and personalization-disabled parameters. Only “foliocove pdf” showed an ordinary organic FolioCove result, at position two. The other 21 did not show FolioCove on the inspected first page. Bare “foliocove” was automatically corrected to “folio cover,” and “foliocovepdf” to “folio ilovepdf.” A suggested correction on the spaced brand query was recorded separately. Results varied between the initial and confirmation reads; this is session evidence, not a universal ranking or deindexing claim. A CAPTCHA returned during an extra check after the audit was complete; it was not bypassed.
