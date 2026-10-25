@@ -1,4 +1,4 @@
-# Contributing to FolioCove
+# Contributing to PDFGirlfriend
 
 Start with README.md and AGENTS.md. Keep document processing on-device and use synthetic fixtures only. Discuss large feature changes in an issue before implementation. Existing tool IDs, local preferences and output names should stay stable.
 
@@ -6,4 +6,4 @@ For code changes, run npm run build and npm test. Check AI-readable changes with
 
 Bug reports are public. Do not attach personal documents, extracted contents, passwords, tokens or private contact details. Describe device/browser, tool, steps and expected/actual behavior using synthetic files. No response-time commitment is offered during this beta.
 
-Source uses the MIT license. Dependencies retain their own licenses. Do not add copied proprietary brand assets, unverified capability claims or remote document processing.
+Project-owned source uses PolyForm Noncommercial 1.0.0; see LICENSE and LICENSING.md. Earlier MIT grants remain valid for earlier revisions. Dependencies retain their own licenses. Do not add copied proprietary brand assets, unverified capability claims or remote document processing.

@@ -6,7 +6,7 @@ Prepared 17 October 2026. This is a research script and service-scope hypothesis
 
 Speak with five people responsible for a small agency's administrative workflows or static-site decisions. A tester can introduce a decision-maker only with permission. Use owner-approved contacts/channels; record actual outreach privately. Do not imply they are buyers until they express a concrete need. No customer files are needed.
 
-> I maintain FolioCove, the free open-source browser PDF workspace. I am exploring whether small teams need help deploying the existing tools on infrastructure they control. Could I ask about your current PDF process for 20 minutes? This is research; you can use and self-host the source without buying a service. Please do not share client documents or credentials.
+> I maintain PDFGirlfriend, the free open-source browser PDF workspace. I am exploring whether small teams need help deploying the existing tools on infrastructure they control. Could I ask about your current PDF process for 20 minutes? This is research; you can use and self-host the source without buying a service. Please do not share client documents or credentials.
 
 ## Twenty-minute interview
 
@@ -24,7 +24,7 @@ Then describe the scope below. Ask: “For that exact scope, would a one-time ex
 
 | Included hypothesis | Acceptance / boundary |
 | --- | --- |
-| One agreed existing FolioCove version on one compatible customer-owned static host. | Customer controls its account and hosting bill; retain MIT and third-party license notices. Record the exact version. |
+| One agreed existing PDFGirlfriend version on one compatible customer-owned static host. | Customer controls its account and hosting bill; retain MIT and third-party license notices. Record the exact version. |
 | Configure the agreed base path and ordinary static delivery. | Verify the chosen hosted path and local dependency assets. No enterprise authentication, cloud storage or new backend. |
 | Synthetic merge and extraction acceptance check. | Merge the existing two samples into three correctly ordered labeled pages; extract pages 2–4 from the six-page sample into one three-page PDF; download and open both on the agreed tested desktop browser. |
 | Written handover for deployment, version, known limits and support contact. | Agree the correction window and communication channel in writing before accepting work. No ongoing maintenance or response-time promise included. |

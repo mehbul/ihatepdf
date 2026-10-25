@@ -6,7 +6,7 @@ body:
     attributes:
       value: |
         Describe your task using an invented example. This issue is public: do not attach personal documents, document text, passwords, credentials, or private contact details.
-        FolioCove keeps document processing on-device. Browser AI is conditional, redaction is experimental, and verified sanitization/PDF/A are unavailable. A request does not promise delivery or change these boundaries.
+        PDFGirlfriend keeps document processing on-device. Browser AI is conditional, redaction is experimental, and verified sanitization/PDF/A are unavailable. A request does not promise delivery or change these boundaries.
   - type: input
     id: tool
     attributes:

@@ -20,7 +20,7 @@ try{
  browser=await chromium.launch();
  const context=await browser.newContext({viewport:{width:1100,height:820},recordVideo:{dir:runtime,size:{width:1100,height:820}},reducedMotion:'reduce'});
  const page=await context.newPage();
- await page.goto('http://127.0.0.1:4175/');await page.waitForTimeout(5000);
+ await page.goto('http://127.0.0.1:4175/');await page.waitForTimeout(5000);await page.screenshot({path:'docs/images/pdfgirlfriend-everyday-tools.png'});
  await page.goto('http://127.0.0.1:4175/merge-pdf/');await page.waitForTimeout(5000);
  await page.getByTestId('file-input').setInputFiles([`${runtime}/sample-one.pdf`,`${runtime}/sample-two.pdf`]);await page.waitForTimeout(8000);
  const download=page.waitForEvent('download');await page.getByTestId('run-tool').click();

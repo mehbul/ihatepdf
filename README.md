@@ -4,7 +4,7 @@
 
 [Open PDFGirlfriend](https://pdfgirlfriend.dpdns.org/) · [Watch the merge demo](https://pdfgirlfriend.dpdns.org/demo/) · [Watch page extraction](https://pdfgirlfriend.dpdns.org/demo/extract-pdf/) · [Choose a PDF converter](https://pdfgirlfriend.dpdns.org/pdf-converter/) · [Browse tools and limits](https://pdfgirlfriend.dpdns.org/tools/) · [Get help](https://pdfgirlfriend.dpdns.org/support/)
 
-[![PDFGirlfriend everyday PDF tools with on-device processing](docs/images/ihatepdf-everyday-tools.png)](https://pdfgirlfriend.dpdns.org/merge-pdf/)
+[![PDFGirlfriend everyday PDF tools with on-device processing](docs/images/pdfgirlfriend-everyday-tools.png)](https://pdfgirlfriend.dpdns.org/merge-pdf/)
 
 PDFGirlfriend is a free, source-available, noncommercial-licensed browser PDF workspace for everyday document tasks. Use it to combine PDFs, extract selected pages, rearrange pages, convert images to PDF or add text and visual signatures. No installation is needed to use the hosted app. Developers can build and host the static app themselves.
 
