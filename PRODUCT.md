@@ -36,3 +36,6 @@ Other appearance flows: PDF-to-XLSX can embed worksheet page images or extract a
 ## PDFGirlfriend migration — 25 October 2026
 
 The current public brand is PDFGirlfriend and its custom domain is https://pdfgirlfriend.dpdns.org/. The public repository is mehbul/pdfgirlfriend. iHatePDF and FolioCove names remain historical aliases. Keep local preference keys, tool IDs, fixture labels and existing output filenames stable. No document uploads or remote analytics are introduced.
+
+
+Catalog update, 26 October 2026: the owner removed the Everyday tools grouping. All 36 visual discovery cards are shown by default, and the workspace defaults to all 88 tool entries. Motion is progressive enhancement with immediate keyboard and reduced-motion paths; document processing and capability limits are unchanged.

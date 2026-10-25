@@ -1,3 +1,4 @@
+import {installMotionAssets} from './build-motion.mjs';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -166,3 +167,5 @@ await writeFile(path.join(dist,'tools','index.html'),renderDocPage('tools',{titl
 await writeFile(path.join(dist,'docs','capabilities.md'),knowledgeMarkdown(capabilities));
 await writeFile(path.join(dist,'llms.txt'),'# '+site.name+'\n\n> Browser PDF tools with on-device document processing. Owner-private beta; not yet publicly indexed.\n\n## Product and guides\n\n- [Tool directory]('+site.origin+'/tools/): all 88 tools, purposes and limits\n- [How it works]('+site.origin+'/testing/): local processing and beta status\n- [Capabilities]('+site.origin+'/docs/capabilities.md): complete plain-text capability guide\n- [Machine-readable catalog]('+site.origin+'/capabilities.json): tool IDs, input formats, URLs and status\n- [Limitations]('+site.origin+'/limitations/): experimental and unavailable features\n- [Privacy]('+site.origin+'/privacy/): storage and network requests\n\n## Important boundaries\n\nAI summary and translation are browser-dependent. Redaction is experimental. Verified sanitization and PDF/A conversion are unavailable. There is no document-upload endpoint or remote processing API. Support: '+site.supportEmail+'. Do not send documents or private information. Physical-device validation remains pending.\n');
 await writeFile(path.join(dist,'robots.txt'),'# Owner-private beta; enable discovery only after public-launch approval.\nUser-agent: *\nDisallow: /\n');
+
+await installMotionAssets();

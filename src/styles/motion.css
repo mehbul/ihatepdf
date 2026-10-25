@@ -1,0 +1,47 @@
+/* A paper-like motion language, shared by tools and reading pages. */
+:root{--motion-fast:140ms;--motion-state:220ms;--motion-ease:cubic-bezier(.16,1,.3,1)}
+::selection{background:#fbe8ed;color:#782039}
+input,textarea{caret-color:#c52949}
+html{scroll-padding-top:96px}
+a{text-underline-offset:4px;text-decoration-thickness:1px}
+button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
+.browse-categories{position:relative;isolation:isolate;scrollbar-width:thin;scrollbar-color:#c8c3c3 transparent}
+.browse-category{min-height:52px;transition:color var(--motion-fast) ease,background-color var(--motion-fast) ease}
+.browse-categories:has(.category-indicator) .browse-category{border-bottom-color:transparent!important}
+.category-indicator{position:absolute;left:0;bottom:0;width:1px;height:2px;background:var(--ink,#222);transform-origin:left center;pointer-events:none;transition:transform var(--motion-state) var(--motion-ease)}
+.tool-card-title img,.cover-action{transition:transform var(--motion-state) var(--motion-ease)}
+.tool-cover .secondary-page{transition:transform 260ms var(--motion-ease)}
+.discovery-search{transition:border-color var(--motion-fast) ease,box-shadow var(--motion-fast) ease}
+.tool,.favorite,.choose,.download-again,.tools-button,.primary-link,.header-nav a,.tool-filter,.recent-select{transition:background-color var(--motion-fast) ease,color var(--motion-fast) ease,border-color var(--motion-fast) ease,transform var(--motion-fast) var(--motion-ease)}
+.upload-icon{transition:transform var(--motion-state) var(--motion-ease),box-shadow var(--motion-state) ease}
+.drop.drag .upload-icon{transform:translateY(-5px);box-shadow:0 8px 20px #c5294920}
+.drop.drag .choose{background:#fbe8ed;border-color:#c52949}
+.tool{min-height:44px}
+.browse-note{font-variant-numeric:tabular-nums}
+.empty-browse{padding:24px;border-radius:12px;background:#fafafa;max-width:640px}
+.empty-browse button{display:block;margin-top:12px;min-height:44px;padding:8px 14px;border:1px solid #ccc;border-radius:8px;background:#fff;color:#222;font-weight:600}
+.download-result{scroll-margin-top:100px}
+:where(button,a,input,select,textarea):focus-visible{outline:3px solid #c52949;outline-offset:4px}
+@media(hover:hover) and (pointer:fine){
+ .core-tools a:hover .secondary-page{transform:translate(-3px,-2px) rotate(-18deg)}
+ .core-tools a:hover .cover-action{transform:translate(2px,-2px)}
+ .core-tools a:hover .tool-card-title>img{transform:translate(2px,-2px)}
+ .drop:hover .upload-icon{transform:translateY(-3px)}
+ .reader a,.search-guide a,.footer-inner a{transition:color var(--motion-fast) ease,text-decoration-color var(--motion-fast) ease}
+ .reader a:hover,.search-guide a:hover{color:#a9223e;text-decoration-color:#c52949}
+}
+@media(prefers-reduced-motion:no-preference){
+ @view-transition{navigation:auto}
+ ::view-transition-old(root){animation:pg-page-out 100ms ease both}
+ ::view-transition-new(root){animation:pg-page-in 180ms var(--motion-ease) both}
+ @keyframes pg-page-out{to{opacity:.3}}
+ @keyframes pg-page-in{from{opacity:.3}to{opacity:1}}
+}
+html[data-motion-input=keyboard] .category-indicator{transition:none}
+@media(max-width:760px){.browse-category{min-height:68px}.empty-browse{padding:20px}.category-indicator{height:2px}}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation:none!important;transition:none!important}
+ ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}
+ .core-tools .tool-cover .secondary-page,.core-tools .tool-cover .document-page,.core-tools a:hover .cover-action,.core-tools a:hover .tool-card-title>img,.drop.drag .upload-icon,.drop:hover .upload-icon{transform:none}
+}

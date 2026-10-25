@@ -181,15 +181,17 @@ test('PDF brand stays readable across public pages and tool navigation',async({p
  expect(manifest.name).toBe('PDFGirlfriend');
  expect(failures).toEqual([]);
 });
-test('Everyday discovery starts focused and still exposes the complete catalog',async({page})=>{
+test('Discovery opens the complete catalog without an Everyday tools filter',async({page})=>{
  await page.goto('/');await expect(page.getByTestId('file-input')).toBeEnabled();
- await expect(page.locator('#tool-filter')).toHaveValue('core');
- await expect(page.locator('#core-tools a:visible')).toHaveCount(6);
- await expect(page.locator('.sidebar .tool:visible')).toHaveCount(6);
- await page.screenshot({path:'.sites-runtime/proof/everyday-desktop.png',fullPage:false});
+ await expect(page.locator('#tool-filter')).toHaveValue('all');
+ await expect(page.locator('#core-tools a:visible')).toHaveCount(36);
+ await expect(page.locator('.sidebar .tool:visible')).toHaveCount(88);
+ await expect(page.getByRole('button',{name:'Everyday tools',exact:true})).toHaveCount(0);
+ await expect(page.locator('#tool-filter option[value=core]')).toHaveCount(0);
+ await page.screenshot({path:'.sites-runtime/proof/all-tools-desktop.png',fullPage:false});
  await page.setViewportSize({width:390,height:844});
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
- await page.screenshot({path:'.sites-runtime/proof/everyday-mobile.png',fullPage:false});
+ await page.screenshot({path:'.sites-runtime/proof/all-tools-mobile.png',fullPage:false});
  await page.locator('#discover-search').fill('Word');
  await expect(page.locator('#core-tools [data-tool-card=docx]')).toBeVisible();
  await expect(page.locator('#core-tools [data-tool-card=wordtopdf]')).toBeVisible();

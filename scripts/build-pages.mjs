@@ -1,3 +1,4 @@
+import {installMotionAssets} from './build-motion.mjs';
 // Preserve the Sites build; adapt its generated static assets for a Pages project URL.
 import './build.mjs';
 import fs from 'node:fs/promises';
@@ -69,3 +70,5 @@ await fs.writeFile(`dist/${searchDiscovery.indexNowKey}.txt`,searchDiscovery.ind
 console.log('Prepared indexable GitHub Pages beta at '+origin+'/ with sitemap.');
 
 await fs.writeFile('dist/CNAME','pdfgirlfriend.dpdns.org\n');
+
+await installMotionAssets();
