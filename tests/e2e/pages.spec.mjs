@@ -1,5 +1,6 @@
 import {test,expect} from '@playwright/test';
 import path from 'node:path';
+import {searchDiscovery} from '../../src/content/search-discovery.mjs';
 import fs from 'node:fs/promises';
 import JSZip from 'jszip';
 import {PDFDocument} from 'pdf-lib';
@@ -211,7 +212,7 @@ test('Pages subpath loads tools, navigation, PDF renderer and local worker downl
  await expect(page).toHaveTitle('PDFGirlfriend — Free tools to merge, split & compress');
  await expect(page.locator('.brand')).toContainText('PUBLIC BETA');
  await expect(page.locator('meta[name=robots]')).toHaveAttribute('content','index,follow');
- await expect(page.locator('meta[name=google-site-verification]')).toHaveAttribute('content','DvS9BP2Rzh2vGhwIWFxLYanLAzH4cOliBGzBFmZpxzY');
+ await expect(page.locator('meta[name=google-site-verification]')).toHaveAttribute('content',searchDiscovery.googleVerification);
  expect((await page.request.get('/sitemap.xml')).status()).toBe(200);
  const sitemap=await (await page.request.get('/sitemap.xml')).text();
  expect(sitemap).toContain('https://pdfgirlfriend.dpdns.org/merge-pdf/');
