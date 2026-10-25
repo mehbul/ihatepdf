@@ -5,6 +5,7 @@ const pages=!!process.env.FOLIOCOVE_PAGES_TEST,base=pages?'':'';
 test('Search ownership proofs are scoped to the public Pages publication',async({page,request})=>{
   await page.goto(base+'/');
   if(pages){
+    await expect(page.locator('meta[name="google-site-verification"]')).toHaveAttribute('content',config.googleVerification);
     await expect(page.locator('meta[name="msvalidate.01"]')).toHaveAttribute('content',config.bingVerification);
     const key=await request.get(`${base}/${config.indexNowKey}.txt`);expect(key.status()).toBe(200);expect((await key.text()).trim()).toBe(config.indexNowKey);
     const sitemap=await request.get(`${base}/sitemap.xml`);const text=await sitemap.text();expect(text).toContain('/guides/images-to-pdf-with-filters/');expect(text).not.toContain(config.indexNowKey);

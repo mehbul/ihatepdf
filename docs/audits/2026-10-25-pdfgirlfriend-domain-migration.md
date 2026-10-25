@@ -11,8 +11,8 @@ Owner-authorized rename on 25 October 2026. Current application identity: PDFGir
 - Fresh merge and extraction recordings use the new app and synthetic documents. Merge download contains two pages; extraction contains only source pages 2, 3 and 4, verified by page count and labels. The extraction preview is rendered from the actual recorded download. Existing media filenames remain stable. README screenshot is refreshed.
 - Discovery and support heartbeat names, current URLs, repository references and new-brand query scope were updated. Historical ranking data remains unchanged. No search-ranking gain, AdSense approval or completed physical-device validation is claimed.
 
-## Pending provider work
+## HTTPS and remaining provider work
 
-At this audit, GitHub reports the certificate request as new/queued; HTTPS and enforcement are not yet verified. Normal TLS verification must succeed before treating the domain as ready, enabling HTTPS enforcement and verifying live downloads over HTTPS. No certificate warnings were bypassed. Google/Bing ownership and sitemap state for this new hostname remain separate from earlier URL properties.
+GitHub approved the root and www certificates. Normal TLS verification succeeded; HTTPS enforcement is enabled. HTTP and www redirect to the canonical HTTPS address. Live HTTPS merge and extraction each produced three-page PDFs; the mobile-width layout fit without horizontal overflow, with no observed external request origins or page JavaScript errors. No certificate warnings were bypassed. Google/Bing ownership and sitemap state for this new hostname remain separate from earlier URL properties; Google requires a new public HTML verification tag, now included in the public-only build. Provider verification/submission is not indexing.
 
 DigitalPlat shows expiry on 25 October 2027 and free renewal within 120 days of expiry. Owner renewal is required. This delegated dpdns.org address is separate from the contemplated paid .in domain. No paid plan, ads, remote processing or private Sites publication was activated.
