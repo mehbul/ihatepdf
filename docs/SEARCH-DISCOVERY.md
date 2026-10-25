@@ -91,3 +91,10 @@ The repository is now `mehbul/ihatepdf`; the current public URL and sitemap are 
 A separate public redirect-only root site, [mehbul/mehbul.github.io](https://github.com/mehbul/mehbul.github.io), preserves the 40 known `/FolioCove/` routes from the current sitemap. Each page has a fixed matching `/ihatepdf/` destination, canonical link, `noindex,follow`, and a visible fallback link. JavaScript navigation preserves the query string and fragment; it is not an HTTP 301. Unknown paths keep a real 404. Root `robots.txt` permits crawling and advertises the current application sitemap. This is a hosting improvement, not proof that Google has fetched or indexed the sitemap. Do not create a new `mehbul/FolioCove` repository: leaving that source name unused preserves GitHub's repository redirect. Keep the root redirect list aligned when moving any additional historically published route.
 
 The owner withdrew association with awesome-pdf on 22 October. Name/URL update PR #110 was closed. Removal PR #111 requests deletion of the historical entry; upstream action is pending. Do not use the directory as a promotional association or submit further listing updates.
+
+
+### Provider completion — 26 October 2026
+
+HTTPS is working with enforcement enabled; HTTP and www redirect to the canonical https://pdfgirlfriend.dpdns.org/. Google URL-prefix ownership was verified with the new HTML tag. The new-domain sitemap was submitted once on 26 October and immediately showed **Success**, with **41 discovered URLs**. Do not resubmit it. This is sitemap discovery, not confirmation that those URLs are indexed or ranked. The post-deployment IndexNow notification received HTTP 202 for 41 URLs; ownership validation was pending.
+
+Release 2d7c54a passed all 53 Pages browser tests and completed Pages workflow 40221692237 and CI 40221692281. Live HTTPS merge and extraction each produced three-page PDFs, with no observed external request origins or page JavaScript errors in that scoped check. The restored redirect-only root repository must be retained for old /FolioCove/ and /ihatepdf/ links. No physical-device, AdSense or ranking milestone is implied.

@@ -16,3 +16,10 @@ Owner-authorized rename on 25 October 2026. Current application identity: PDFGir
 GitHub approved the root and www certificates. Normal TLS verification succeeded; HTTPS enforcement is enabled. HTTP and www redirect to the canonical HTTPS address. Live HTTPS merge and extraction each produced three-page PDFs; the mobile-width layout fit without horizontal overflow, with no observed external request origins or page JavaScript errors. No certificate warnings were bypassed. Google/Bing ownership and sitemap state for this new hostname remain separate from earlier URL properties; Google requires a new public HTML verification tag, now included in the public-only build. Provider verification/submission is not indexing.
 
 DigitalPlat shows expiry on 25 October 2027 and free renewal within 120 days of expiry. Owner renewal is required. This delegated dpdns.org address is separate from the contemplated paid .in domain. No paid plan, ads, remote processing or private Sites publication was activated.
+
+
+### Provider completion — 26 October 2026
+
+HTTPS is working with enforcement enabled; HTTP and www redirect to the canonical https://pdfgirlfriend.dpdns.org/. Google URL-prefix ownership was verified with the new HTML tag. The new-domain sitemap was submitted once on 26 October and immediately showed **Success**, with **41 discovered URLs**. Do not resubmit it. This is sitemap discovery, not confirmation that those URLs are indexed or ranked. The post-deployment IndexNow notification received HTTP 202 for 41 URLs; ownership validation was pending.
+
+Release 2d7c54a passed all 53 Pages browser tests and completed Pages workflow 40221692237 and CI 40221692281. Live HTTPS merge and extraction each produced three-page PDFs, with no observed external request origins or page JavaScript errors in that scoped check. The restored redirect-only root repository must be retained for old /FolioCove/ and /ihatepdf/ links. No physical-device, AdSense or ranking milestone is implied.
