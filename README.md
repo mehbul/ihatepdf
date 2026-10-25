@@ -2,7 +2,7 @@
 
 **Merge, split, compress and convert PDFs in your browser. Your documents are processed on your device, with no account or document uploads.**
 
-[Open PDFGirlfriend](https://pdfgirlfriend.dpdns.org/) · [Watch the merge demo](https://pdfgirlfriend.dpdns.org/demo/) · [Watch page extraction](https://pdfgirlfriend.dpdns.org/demo/extract-pdf/) · [Choose a PDF converter](https://pdfgirlfriend.dpdns.org/pdf-converter/) · [Browse tools and limits](https://pdfgirlfriend.dpdns.org/tools/) · [Get help](https://pdfgirlfriend.dpdns.org/support/)
+[Open PDFGirlfriend](https://pdfgirlfriend.dpdns.org/) · [Watch the merge demo](https://pdfgirlfriend.dpdns.org/demo/) · [Watch page extraction](https://pdfgirlfriend.dpdns.org/demo/extract-pdf/) · [Choose a PDF converter](https://pdfgirlfriend.dpdns.org/pdf-converter/) · [Browse tools and limits](https://pdfgirlfriend.dpdns.org/tools/) · [Get help](https://pdfgirlfriend.dpdns.org/support/) · [About and common questions](https://pdfgirlfriend.dpdns.org/about/)
 
 [![PDFGirlfriend PDF tool catalog with on-device processing](docs/images/pdfgirlfriend-tools.png)](https://pdfgirlfriend.dpdns.org/merge-pdf/)
 
@@ -75,7 +75,7 @@ Choose a different, suitably validated workflow if you need high-fidelity Office
 
 ### Is PDFGirlfriend free to use with source available?
 
-The public beta is free to use without an app account. The source is licensed under PolyForm Noncommercial 1.0.0; dependencies retain their own licenses. PDFGirlfriend is also written PDFGirlfriend; the established repository name and URL remain PDFGirlfriend.
+The public beta is free to use without an app account. The source is licensed under PolyForm Noncommercial 1.0.0; dependencies retain their own licenses. Earlier names were iHatePDF and FolioCove PDF. The current website is https://pdfgirlfriend.dpdns.org/ and the source repository is mehbul/pdfgirlfriend.
 
 ### Can I merge PDFs online without uploading them?
 

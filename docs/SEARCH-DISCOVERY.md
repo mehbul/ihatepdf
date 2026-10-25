@@ -98,3 +98,12 @@ The owner withdrew association with awesome-pdf on 22 October. Name/URL update P
 HTTPS is working with enforcement enabled; HTTP and www redirect to the canonical https://pdfgirlfriend.dpdns.org/. Google URL-prefix ownership was verified with the new HTML tag. The new-domain sitemap was submitted once on 26 October and immediately showed **Success**, with **41 discovered URLs**. Do not resubmit it. This is sitemap discovery, not confirmation that those URLs are indexed or ranked. The post-deployment IndexNow notification received HTTP 202 for 41 URLs; ownership validation was pending.
 
 Release 2d7c54a passed all 53 Pages browser tests and completed Pages workflow 40221692237 and CI 40221692281. Live HTTPS merge and extraction each produced three-page PDFs, with no observed external request origins or page JavaScript errors in that scoped check. The restored redirect-only root repository must be retained for old /FolioCove/ and /ihatepdf/ links. No physical-device, AdSense or ranking milestone is implied.
+
+
+### Search readiness completion — 26 October 2026
+
+Release 13b404c completed Pages workflow 40224485082 and CI 40224485123. All 56 Pages browser checks passed; live fetches validated all 42 current sitemap pages, their self-canonicals, unique titles, page-specific Open Graph/Twitter metadata, structured identity, 1200×630 preview, RSS feed and corrected capability facts. The About page is readable at phone width.
+
+Bing manually verified the current domain and accepted one sitemap submission. Its table showed **Success**, **42 discovered URLs**, zero errors and zero warnings. Do not resubmit this accepted sitemap. Google's current homepage report was **Discovered — currently not indexed**, with no recorded crawl. One new-host homepage indexing request was attempted but Google rejected it with a daily-quota message and a reCAPTCHA service connection error; no accepted indexing request is claimed and no challenge was bypassed. Do not retry in a loop. The prior successful Google sitemap submission remains accepted. Provider discovery is not index membership, rankings or AI citation evidence.
+
+The root redirect repository added zero-second HTML refresh fallbacks for 80 known legacy routes, release 5ddafcb, completed root Pages workflow 40224604802. Eight Chromium/WebKit checks covered normal JavaScript query/hash preservation and fixed-path navigation without JavaScript. The live redirect HTML was checked for both legacy prefixes. These remain client-side redirects, not HTTP 301 responses.

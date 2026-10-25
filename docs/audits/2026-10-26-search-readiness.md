@@ -34,3 +34,12 @@ Indexing, non-brand rankings, AI answer selection/citations and visitor retentio
 - https://developers.google.com/search/docs/crawling-indexing/301-redirects — redirect types and migration behavior.
 
 No separate local-service PDF proposal, fake local business listing or new training permission is part of this online utility's SEO work.
+
+
+### Search readiness completion — 26 October 2026
+
+Release 13b404c completed Pages workflow 40224485082 and CI 40224485123. All 56 Pages browser checks passed; live fetches validated all 42 current sitemap pages, their self-canonicals, unique titles, page-specific Open Graph/Twitter metadata, structured identity, 1200×630 preview, RSS feed and corrected capability facts. The About page is readable at phone width.
+
+Bing manually verified the current domain and accepted one sitemap submission. Its table showed **Success**, **42 discovered URLs**, zero errors and zero warnings. Do not resubmit this accepted sitemap. Google's current homepage report was **Discovered — currently not indexed**, with no recorded crawl. One new-host homepage indexing request was attempted but Google rejected it with a daily-quota message and a reCAPTCHA service connection error; no accepted indexing request is claimed and no challenge was bypassed. Do not retry in a loop. The prior successful Google sitemap submission remains accepted. Provider discovery is not index membership, rankings or AI citation evidence.
+
+The root redirect repository added zero-second HTML refresh fallbacks for 80 known legacy routes, release 5ddafcb, completed root Pages workflow 40224604802. Eight Chromium/WebKit checks covered normal JavaScript query/hash preservation and fixed-path navigation without JavaScript. The live redirect HTML was checked for both legacy prefixes. These remain client-side redirects, not HTTP 301 responses.
