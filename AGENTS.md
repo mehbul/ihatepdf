@@ -30,3 +30,7 @@ The separate Sites host uses the existing project ID in `.openai/hosting.json`. 
 ## Directory association preference
 
 On 22 October 2026 the owner withdrew association with karllhughes/awesome-pdf. Do not promote that listing, submit updates or resubmit this application there. Name/URL update PR #110 is closed; removal PR #111 is pending upstream. Historical audit records do not authorize future association.
+
+## Licensing
+
+The owner requested noncommercial source licensing on 25 October 2026. Current project-owned code uses PolyForm Noncommercial 1.0.0, with the official hosted-application permission in LICENSING.md. Describe it as source-available, not open source. Earlier MIT grants and third-party licenses remain in effect for the material they cover. Do not make the repository private as part of this change.

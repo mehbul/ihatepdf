@@ -1,4 +1,4 @@
-# iHatePDF — Free, open-source PDF tools
+# iHatePDF — Free, source-available PDF tools
 
 **Merge, split, compress and convert PDFs in your browser. Your documents are processed on your device, with no account or document uploads.**
 
@@ -6,7 +6,7 @@
 
 [![iHatePDF everyday PDF tools with on-device processing](docs/images/ihatepdf-everyday-tools.png)](https://mehbul.github.io/ihatepdf/merge-pdf/)
 
-iHatePDF is a free, MIT-licensed browser PDF workspace for everyday document tasks. Use it to combine PDFs, extract selected pages, rearrange pages, convert images to PDF or add text and visual signatures. No installation is needed to use the hosted app. Developers can build and host the static app themselves.
+iHatePDF is a free, source-available, noncommercial-licensed browser PDF workspace for everyday document tasks. Use it to combine PDFs, extract selected pages, rearrange pages, convert images to PDF or add text and visual signatures. No installation is needed to use the hosted app. Developers can build and host the static app themselves.
 
 **Public beta:** keep originals and inspect outputs. Redaction is experimental, AI depends on browser support, and verified sanitization and PDF/A conversion are unavailable. Physical phone cameras, native downloads and actual Safari remain unverified. The 88-entry catalog includes experimental, conditional and unavailable tools; it is not a count of equally validated features.
 
@@ -57,7 +57,7 @@ For an unlocked PDF result within the beta file limit, choose **Next PDF tool** 
 
 - **No document-upload endpoint:** selected files are processed on your device rather than sent to a iHatePDF processing server.
 - **No account required:** open a task, select files and download the result.
-- **Inspectable source:** the [MIT license](LICENSE), [processing model](https://mehbul.github.io/ihatepdf/security/) and [capability catalog](https://mehbul.github.io/ihatepdf/capabilities.json) are public.
+- **Inspectable source:** the [PolyForm Noncommercial license](LICENSE), [processing model](https://mehbul.github.io/ihatepdf/security/) and [capability catalog](https://mehbul.github.io/ihatepdf/capabilities.json) are public.
 - **Examples you can reproduce:** check synthetic page labels and reference outputs yourself.
 - **Limits before processing:** conversion fidelity, raster compression and browser requirements are disclosed.
 
@@ -65,7 +65,7 @@ On-device processing does not mean zero network traffic or guaranteed security. 
 
 ## Looking for an iLovePDF or Smallpdf alternative?
 
-iHatePDF is an option for everyday browser PDF tasks when you want on-device document processing and open-source code. It does not replace every workflow offered by iLovePDF, Smallpdf, Adobe Acrobat or PDF24.
+iHatePDF is an option for everyday browser PDF tasks when you want on-device document processing and inspectable source code. It does not replace every workflow offered by iLovePDF, Smallpdf, Adobe Acrobat or PDF24.
 
 Read the publisher-disclosed [iLovePDF alternative comparison](https://mehbul.github.io/ihatepdf/blog/ilovepdf-alternative/) and [Smallpdf alternative comparison](https://mehbul.github.io/ihatepdf/blog/smallpdf-alternative/). Each article identifies its source-check date, links official provider information and explains iHatePDF's limitations. Pricing, features and processing methods vary by product and can change. These are independent brands; no affiliation or endorsement is implied.
 
@@ -73,9 +73,9 @@ Choose a different, suitably validated workflow if you need high-fidelity Office
 
 ## Frequently asked questions
 
-### Is iHatePDF free and open source?
+### Is iHatePDF free to use with source available?
 
-Yes. The public beta is free to use without an app account. The source is MIT licensed; dependencies retain their own licenses. iHatePDF is also written iHatePDF; the established repository name and URL remain iHatePDF.
+The public beta is free to use without an app account. The source is licensed under PolyForm Noncommercial 1.0.0; dependencies retain their own licenses. iHatePDF is also written iHatePDF; the established repository name and URL remain iHatePDF.
 
 ### Can I merge PDFs online without uploading them?
 
@@ -107,9 +107,9 @@ The app uses static HTML, CSS and JavaScript modules with browser-side PDF proce
 
 ## GitHub Pages beta
 
-The owner selected GitHub Pages for free open-source hosting. The Pages workflow builds from main, runs handler and AI-readability checks, adapts paths for /ihatepdf/, verifies PDF downloads/rendering/local workers at that subpath, then deploys the artifact. The expected project address is https://mehbul.github.io/ihatepdf/; a successful Pages deployment establishes availability.
+The owner selected GitHub Pages for free static hosting. The Pages workflow builds from main, runs handler and AI-readability checks, adapts paths for /ihatepdf/, verifies PDF downloads/rendering/local workers at that subpath, then deploys the artifact. The expected project address is https://mehbul.github.io/ihatepdf/; a successful Pages deployment establishes availability.
 
-Run node scripts/build-pages.mjs followed by npx playwright test --config=playwright.pages.config.mjs to verify this target. Run npm run build afterwards to restore the ordinary root-path Sites build. The existing Sites project is preserved. Pages publishes a public beta with GitHub Issues as its bug-report channel; search indexing is enabled for Pages, sensitive feedback must not be attached, and physical-device testing remains incomplete. Source is MIT licensed; dependencies retain their own licenses.
+Run node scripts/build-pages.mjs followed by npx playwright test --config=playwright.pages.config.mjs to verify this target. Run npm run build afterwards to restore the ordinary root-path Sites build. The existing Sites project is preserved. Pages publishes a public beta with GitHub Issues as its bug-report channel; search indexing is enabled for Pages, sensitive feedback must not be attached, and physical-device testing remains incomplete. Source is licensed under PolyForm Noncommercial 1.0.0; dependencies retain their own licenses.
 
 Previously named PrivyPDF. Existing browser preferences and optional local metrics retain their original storage keys so an update does not erase them.
 
@@ -212,3 +212,9 @@ The build writes /tools/ (static readable directory), /capabilities.json, /docs/
 Run node scripts/test-ai-readiness.mjs after building. The short mobile/Safari-engine pilot remains available through playwright.pilot.config.mjs; physical devices and actual Safari are a separate uncompleted gate.
 
 The public GitHub Pages build enables indexing and emits a sitemap. The separate Sites build remains owner-private with noindex,nofollow. AI-readable files do not guarantee search ranking or citations. Opening crawler access to product pages does not authorize training on private documents.
+
+## Source licensing and commercial reuse
+
+Project-owned code in this revision is offered under [PolyForm Noncommercial 1.0.0](LICENSE). This is source-available software, not OSI open-source software. Noncommercial copying, modification and redistribution are permitted under that license. Commercial reuse, including selling copies or operating a paid or advertising-supported service based on this code, requires separate written permission from the copyright holder. Contact the maintainer through the repository for licensing requests.
+
+The owner separately permits visitors to use the official hosted application to process their own personal or business documents. This permission does not authorize commercial redistribution or hosting of the code. The owner retains the ability to monetize the official application. See [LICENSING.md](LICENSING.md) for scope and historical-license limits.
