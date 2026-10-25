@@ -8,6 +8,8 @@
     "FolioCovePDF"
   ],
   "website": "https://foliocove-tools.mehbulislam81.chatgpt.site",
+  "sourceCode": "https://github.com/mehbul/pdfgirlfriend",
+  "license": "https://github.com/mehbul/pdfgirlfriend/blob/main/LICENSE",
   "releaseStatus": "private-beta",
   "processing": "on-device",
   "documentUploadEndpoint": null,

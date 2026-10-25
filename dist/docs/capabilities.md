@@ -1,6 +1,10 @@
 # PDFGirlfriend capabilities
 
-PDFGirlfriend (also written PDFGirlfriend; previously named PDFGirlfriend) is a browser PDF workspace. Release status: private-beta. Operator name supplied: PDFGirlfriend, India. Support: mehbulislam81@gmail.com. Do not send documents or private information.
+PDFGirlfriend (previous names: iHatePDF, FolioCove PDF, FolioCove, FolioCovePDF) is a browser PDF workspace. Release status: private-beta. Operator: PDFGirlfriend, India. Support: mehbulislam81@gmail.com. Do not send documents or private information.
+
+## Source and hosted use
+
+The official hosted application is free for personal and business documents. Project-owned source uses PolyForm Noncommercial 1.0.0; commercial reuse or hosting of current project code requires separate permission. Earlier MIT grants and dependency licenses remain in effect. Source: https://github.com/mehbul/pdfgirlfriend. Licensing: https://github.com/mehbul/pdfgirlfriend/blob/main/LICENSING.md.
 
 ## Processing and privacy
 
@@ -810,4 +814,4 @@ Selected documents are processed on-device; there is no document-upload endpoint
 
 ## Validation boundary
 
-A focused audit on 2026-10-02 tested representative synthetic inputs. The subsequent 21-check engine/emulation pilot passed. Physical phone cameras, native downloads and actual Safari remain unverified. Output parseability does not prove accuracy for every document.
+Scoped synthetic checks and their dates are recorded in https://github.com/mehbul/pdfgirlfriend/tree/main/docs/audits. These are scoped checks, not independent security certification. Physical phone cameras, native downloads and actual Safari remain unverified. Output parseability does not prove accuracy for every document.

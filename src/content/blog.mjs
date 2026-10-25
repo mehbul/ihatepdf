@@ -60,7 +60,7 @@ function render(slug,a){
 }
 export async function buildBlog(){
  for(const [slug,a] of Object.entries(articles)){await fs.mkdir(`dist/blog/${slug}`,{recursive:true});await fs.writeFile(`dist/blog/${slug}/index.html`,render(slug,a));}
- await fs.writeFile('dist/blog/index.html',guidePage('','PDF comparisons & privacy','Practical articles about iLovePDF and Smallpdf alternatives, document privacy and open-source PDF workflows.',`<p>Published by PDFGirlfriend. Product comparisons include sources and the limits of our own tools.</p><ul>${links()}</ul>`,'blog'));
+ await fs.writeFile('dist/blog/index.html',guidePage('','PDF comparisons & privacy','Practical articles about iLovePDF and Smallpdf alternatives, document privacy and source-available PDF workflows.',`<p>Published by PDFGirlfriend. Product comparisons include sources and the limits of our own tools.</p><ul>${links()}</ul>`,'blog'));
  for(const file of ['dist/index.html','dist/guides/index.html',...Object.keys(articles).map(slug=>`dist/blog/${slug}/index.html`)]){
   let html=await fs.readFile(file,'utf8');
   const section=file==='dist/index.html'?`<section class="search-guide" aria-label="PDF comparisons and privacy"><h2>PDF comparisons &amp; privacy</h2><ul>${links()}</ul></section>`:'';
