@@ -14,3 +14,5 @@ A small self-hosted CSS/module layer adds one initial paper-preview fan, a movin
 - The motion CSS and module total approximately 9.3 KB of uncompressed source. This is a source-size observation, not a field performance score. Browser support controls cross-document transitions; ordinary navigation remains the fallback.
 
 Publication requires the commit-specific Pages workflow and live checks; local passing checks alone do not establish deployment. The separate Sites audience remains owner-private.
+
+Fresh merge and extraction demonstrations were recorded on 26 October so the published media also omit the removed category. Recorded outputs were checked: two merged pages and three extracted pages (source pages 2, 3 and 4). Existing media URLs are retained.
