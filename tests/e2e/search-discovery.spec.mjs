@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 import {searchDiscovery as config} from '../../src/content/search-discovery.mjs';
-const pages=!!process.env.FOLIOCOVE_PAGES_TEST,base=pages?'/ihatepdf':'';
+const pages=!!process.env.FOLIOCOVE_PAGES_TEST,base=pages?'':'';
 
 test('Search ownership proofs are scoped to the public Pages publication',async({page,request})=>{
   await page.goto(base+'/');

@@ -1,41 +1,41 @@
-# iHatePDF — Free, source-available PDF tools
+# PDFGirlfriend — Free, source-available PDF tools
 
 **Merge, split, compress and convert PDFs in your browser. Your documents are processed on your device, with no account or document uploads.**
 
-[Open iHatePDF](https://mehbul.github.io/ihatepdf/) · [Watch the merge demo](https://mehbul.github.io/ihatepdf/demo/) · [Watch page extraction](https://mehbul.github.io/ihatepdf/demo/extract-pdf/) · [Choose a PDF converter](https://mehbul.github.io/ihatepdf/pdf-converter/) · [Browse tools and limits](https://mehbul.github.io/ihatepdf/tools/) · [Get help](https://mehbul.github.io/ihatepdf/support/)
+[Open PDFGirlfriend](https://pdfgirlfriend.dpdns.org/) · [Watch the merge demo](https://pdfgirlfriend.dpdns.org/demo/) · [Watch page extraction](https://pdfgirlfriend.dpdns.org/demo/extract-pdf/) · [Choose a PDF converter](https://pdfgirlfriend.dpdns.org/pdf-converter/) · [Browse tools and limits](https://pdfgirlfriend.dpdns.org/tools/) · [Get help](https://pdfgirlfriend.dpdns.org/support/)
 
-[![iHatePDF everyday PDF tools with on-device processing](docs/images/ihatepdf-everyday-tools.png)](https://mehbul.github.io/ihatepdf/merge-pdf/)
+[![PDFGirlfriend everyday PDF tools with on-device processing](docs/images/ihatepdf-everyday-tools.png)](https://pdfgirlfriend.dpdns.org/merge-pdf/)
 
-iHatePDF is a free, source-available, noncommercial-licensed browser PDF workspace for everyday document tasks. Use it to combine PDFs, extract selected pages, rearrange pages, convert images to PDF or add text and visual signatures. No installation is needed to use the hosted app. Developers can build and host the static app themselves.
+PDFGirlfriend is a free, source-available, noncommercial-licensed browser PDF workspace for everyday document tasks. Use it to combine PDFs, extract selected pages, rearrange pages, convert images to PDF or add text and visual signatures. No installation is needed to use the hosted app. Developers can build and host the static app themselves.
 
 **Public beta:** keep originals and inspect outputs. Redaction is experimental, AI depends on browser support, and verified sanitization and PDF/A conversion are unavailable. Physical phone cameras, native downloads and actual Safari remain unverified. The 88-entry catalog includes experimental, conditional and unavailable tools; it is not a count of equally validated features.
 
-[Try one five-minute task with synthetic samples](https://mehbul.github.io/ihatepdf/try/) and share optional feedback by email. Merge and extraction workspaces can load their sample PDFs directly; no app account or personal document is needed.
+[Try one five-minute task with synthetic samples](https://pdfgirlfriend.dpdns.org/try/) and share optional feedback by email. Merge and extraction workspaces can load their sample PDFs directly; no app account or personal document is needed.
 
 ## Try a PDF task now
 
 | Task | Open the tool | What to expect |
 | --- | --- | --- |
-| Merge PDF files | [Merge PDFs](https://mehbul.github.io/ihatepdf/merge-pdf/) | Combine PDFs in your chosen file order; merging does not verify signatures. |
-| Split a PDF or extract pages | [Extract pages](https://mehbul.github.io/ihatepdf/split-pdf/) | One new PDF containing your selected pages or ranges, not a separate file for every page. |
-| Organize PDF pages | [Organize pages](https://mehbul.github.io/ihatepdf/organize-pdf/) | Preview, rearrange or remove pages; inspect forms and annotations afterwards. |
-| Compress PDF without rasterizing text | [Lossless compression](https://mehbul.github.io/ihatepdf/lossless-compress-pdf/) | Optimize PDF structure; the file may not shrink and can become larger. |
-| Compress PDF to a target size | [Target-size compression](https://mehbul.github.io/ihatepdf/compress-pdf/) | Best-effort raster compression; loses selectable text, forms and accessibility information. |
-| Convert JPG or PNG to PDF | [Images to PDF](https://mehbul.github.io/ihatepdf/jpg-to-pdf/) | Ordered pictures with filters, crop/rotation, preview, paper size, margins and quality controls; no OCR. |
-| Convert PDF to JPG | [PDF to JPG](https://mehbul.github.io/ihatepdf/pdf-to-jpg/) | A ZIP containing one rendered JPG per page, not original embedded-image extraction. |
-| Convert PDF to Word | [PDF to DOCX](https://mehbul.github.io/ihatepdf/pdf-to-word/) | Page images preserve appearance by default; content is not editable. Optional editable text removes layout. |
-| Convert Word to PDF | [DOCX to PDF](https://mehbul.github.io/ihatepdf/word-to-pdf/) | Browser-rendered page images by default; text is not selectable. Complex layouts/fonts may differ. Optional text-only export. Legacy DOC unsupported. |
-| Convert PDF to Excel | [PDF to XLSX](https://mehbul.github.io/ihatepdf/pdf-to-excel/) | One page image per worksheet by default; content is not editable data. Optional approximate text rows; formulas are not recovered. |
-| Convert Excel to PDF | [XLSX/XLS values to PDF](https://mehbul.github.io/ihatepdf/excel-to-pdf/) | Basic XLSX formatting and images as PDF page images, or XLSX/XLS values as text. Complex printing, charts and conditional formatting unsupported. |
-| Convert PDF to PowerPoint | [PDF to PPTX](https://mehbul.github.io/ihatepdf/pdf-to-powerpoint/) | Page images with slide dimensions matching the first PDF page; content is not editable. |
-| Convert PowerPoint to PDF | [PPTX to PDF](https://mehbul.github.io/ihatepdf/powerpoint-to-pdf/) | Supported slide backgrounds, text, shapes and images rendered locally. Complex graphics and legacy PPT unsupported; text-only mode available. |
-| Add text to a PDF | [Edit PDF](https://mehbul.github.io/ihatepdf/edit-pdf/) | Add a text overlay; does not rewrite existing paragraphs. |
-| Add a signature to a PDF | [Sign PDF](https://mehbul.github.io/ihatepdf/sign-pdf/) | A visible typed signature mark, not certificate signing or identity verification. |
-| Make scanned text searchable | [English OCR](https://mehbul.github.io/ihatepdf/ocr-pdf/) | Local recognition with an English model download; review words and numbers for errors. |
+| Merge PDF files | [Merge PDFs](https://pdfgirlfriend.dpdns.org/merge-pdf/) | Combine PDFs in your chosen file order; merging does not verify signatures. |
+| Split a PDF or extract pages | [Extract pages](https://pdfgirlfriend.dpdns.org/split-pdf/) | One new PDF containing your selected pages or ranges, not a separate file for every page. |
+| Organize PDF pages | [Organize pages](https://pdfgirlfriend.dpdns.org/organize-pdf/) | Preview, rearrange or remove pages; inspect forms and annotations afterwards. |
+| Compress PDF without rasterizing text | [Lossless compression](https://pdfgirlfriend.dpdns.org/lossless-compress-pdf/) | Optimize PDF structure; the file may not shrink and can become larger. |
+| Compress PDF to a target size | [Target-size compression](https://pdfgirlfriend.dpdns.org/compress-pdf/) | Best-effort raster compression; loses selectable text, forms and accessibility information. |
+| Convert JPG or PNG to PDF | [Images to PDF](https://pdfgirlfriend.dpdns.org/jpg-to-pdf/) | Ordered pictures with filters, crop/rotation, preview, paper size, margins and quality controls; no OCR. |
+| Convert PDF to JPG | [PDF to JPG](https://pdfgirlfriend.dpdns.org/pdf-to-jpg/) | A ZIP containing one rendered JPG per page, not original embedded-image extraction. |
+| Convert PDF to Word | [PDF to DOCX](https://pdfgirlfriend.dpdns.org/pdf-to-word/) | Page images preserve appearance by default; content is not editable. Optional editable text removes layout. |
+| Convert Word to PDF | [DOCX to PDF](https://pdfgirlfriend.dpdns.org/word-to-pdf/) | Browser-rendered page images by default; text is not selectable. Complex layouts/fonts may differ. Optional text-only export. Legacy DOC unsupported. |
+| Convert PDF to Excel | [PDF to XLSX](https://pdfgirlfriend.dpdns.org/pdf-to-excel/) | One page image per worksheet by default; content is not editable data. Optional approximate text rows; formulas are not recovered. |
+| Convert Excel to PDF | [XLSX/XLS values to PDF](https://pdfgirlfriend.dpdns.org/excel-to-pdf/) | Basic XLSX formatting and images as PDF page images, or XLSX/XLS values as text. Complex printing, charts and conditional formatting unsupported. |
+| Convert PDF to PowerPoint | [PDF to PPTX](https://pdfgirlfriend.dpdns.org/pdf-to-powerpoint/) | Page images with slide dimensions matching the first PDF page; content is not editable. |
+| Convert PowerPoint to PDF | [PPTX to PDF](https://pdfgirlfriend.dpdns.org/powerpoint-to-pdf/) | Supported slide backgrounds, text, shapes and images rendered locally. Complex graphics and legacy PPT unsupported; text-only mode available. |
+| Add text to a PDF | [Edit PDF](https://pdfgirlfriend.dpdns.org/edit-pdf/) | Add a text overlay; does not rewrite existing paragraphs. |
+| Add a signature to a PDF | [Sign PDF](https://pdfgirlfriend.dpdns.org/sign-pdf/) | A visible typed signature mark, not certificate signing or identity verification. |
+| Make scanned text searchable | [English OCR](https://pdfgirlfriend.dpdns.org/ocr-pdf/) | Local recognition with an English model download; review words and numbers for errors. |
 
 ## Pictures to PDF with filters
 
-Open [Images to PDF](https://mehbul.github.io/ihatepdf/jpg-to-pdf/) and select pictures in order. Use the file arrows, drag the page buttons, sort by filename or reverse the order. Choose an image to edit its original/grayscale/black-and-white/document-scan/sepia filter, brightness, contrast, saturation, sharpening, threshold, rotation, flips, inversion, auto contrast and percentage crop. Reset one image, duplicate it or apply its adjustments to all images.
+Open [Images to PDF](https://pdfgirlfriend.dpdns.org/jpg-to-pdf/) and select pictures in order. Use the file arrows, drag the page buttons, sort by filename or reverse the order. Choose an image to edit its original/grayscale/black-and-white/document-scan/sepia filter, brightness, contrast, saturation, sharpening, threshold, rotation, flips, inversion, auto contrast and percentage crop. Reset one image, duplicate it or apply its adjustments to all images.
 
 The preview shares export processing. Choose image-sized, A4, A5, Letter or Legal pages; auto, portrait or landscape orientation; fit, fill or stretch; margins, background, resolution, JPEG quality, page numbers, title and filename. Create & download produces one picture per page, and Download again recovers the prepared result. You can continue into another PDF tool with Use this PDF.
 
@@ -43,11 +43,11 @@ Pictures stay in browser memory and are cleared when you leave/reload; no docume
 
 ## How to merge PDFs without uploading
 
-1. Open [Merge PDFs](https://mehbul.github.io/ihatepdf/merge-pdf/).
+1. Open [Merge PDFs](https://pdfgirlfriend.dpdns.org/merge-pdf/).
 2. Select at least two PDFs. Use Move up and Move down to set their order.
 3. Choose **Merge & download**, then open the result and check its page count and order.
 
-Want to try it before choosing your own files? The [worked merge example](https://mehbul.github.io/ihatepdf/guides/merge-pdfs-without-uploading/) includes synthetic inputs, expected page labels and a reference PDF. The [extraction guide](https://mehbul.github.io/ihatepdf/guides/extract-pages-from-pdf/) provides a six-page sample and a pages 2–4 reference.
+Want to try it before choosing your own files? The [worked merge example](https://pdfgirlfriend.dpdns.org/guides/merge-pdfs-without-uploading/) includes synthetic inputs, expected page labels and a reference PDF. The [extraction guide](https://pdfgirlfriend.dpdns.org/guides/extract-pages-from-pdf/) provides a six-page sample and a pages 2–4 reference.
 
 Prepared downloads show their actual size and a Download again link. The browser does not overwrite your original files. Large, malformed or password-protected inputs can fail; the beta limit is 100 MB per file and practical device limits may be lower.
 
@@ -55,65 +55,65 @@ For an unlocked PDF result within the beta file limit, choose **Next PDF tool** 
 
 ## Why use a browser PDF tool with on-device processing?
 
-- **No document-upload endpoint:** selected files are processed on your device rather than sent to a iHatePDF processing server.
+- **No document-upload endpoint:** selected files are processed on your device rather than sent to a PDFGirlfriend processing server.
 - **No account required:** open a task, select files and download the result.
-- **Inspectable source:** the [PolyForm Noncommercial license](LICENSE), [processing model](https://mehbul.github.io/ihatepdf/security/) and [capability catalog](https://mehbul.github.io/ihatepdf/capabilities.json) are public.
+- **Inspectable source:** the [PolyForm Noncommercial license](LICENSE), [processing model](https://pdfgirlfriend.dpdns.org/security/) and [capability catalog](https://pdfgirlfriend.dpdns.org/capabilities.json) are public.
 - **Examples you can reproduce:** check synthetic page labels and reference outputs yourself.
 - **Limits before processing:** conversion fidelity, raster compression and browser requirements are disclosed.
 
-On-device processing does not mean zero network traffic or guaranteed security. The host serves site assets; OCR and browser AI may download models. Read the [privacy explanation](https://mehbul.github.io/ihatepdf/privacy/) and [tool limitations](https://mehbul.github.io/ihatepdf/limitations/).
+On-device processing does not mean zero network traffic or guaranteed security. The host serves site assets; OCR and browser AI may download models. Read the [privacy explanation](https://pdfgirlfriend.dpdns.org/privacy/) and [tool limitations](https://pdfgirlfriend.dpdns.org/limitations/).
 
 ## Looking for an iLovePDF or Smallpdf alternative?
 
-iHatePDF is an option for everyday browser PDF tasks when you want on-device document processing and inspectable source code. It does not replace every workflow offered by iLovePDF, Smallpdf, Adobe Acrobat or PDF24.
+PDFGirlfriend is an option for everyday browser PDF tasks when you want on-device document processing and inspectable source code. It does not replace every workflow offered by iLovePDF, Smallpdf, Adobe Acrobat or PDF24.
 
-Read the publisher-disclosed [iLovePDF alternative comparison](https://mehbul.github.io/ihatepdf/blog/ilovepdf-alternative/) and [Smallpdf alternative comparison](https://mehbul.github.io/ihatepdf/blog/smallpdf-alternative/). Each article identifies its source-check date, links official provider information and explains iHatePDF's limitations. Pricing, features and processing methods vary by product and can change. These are independent brands; no affiliation or endorsement is implied.
+Read the publisher-disclosed [iLovePDF alternative comparison](https://pdfgirlfriend.dpdns.org/blog/ilovepdf-alternative/) and [Smallpdf alternative comparison](https://pdfgirlfriend.dpdns.org/blog/smallpdf-alternative/). Each article identifies its source-check date, links official provider information and explains PDFGirlfriend's limitations. Pricing, features and processing methods vary by product and can change. These are independent brands; no affiliation or endorsement is implied.
 
 Choose a different, suitably validated workflow if you need high-fidelity Office reconstruction, verified sanitization, validated PDF/A, certificate-based signatures or remote signature requests.
 
 ## Frequently asked questions
 
-### Is iHatePDF free to use with source available?
+### Is PDFGirlfriend free to use with source available?
 
-The public beta is free to use without an app account. The source is licensed under PolyForm Noncommercial 1.0.0; dependencies retain their own licenses. iHatePDF is also written iHatePDF; the established repository name and URL remain iHatePDF.
+The public beta is free to use without an app account. The source is licensed under PolyForm Noncommercial 1.0.0; dependencies retain their own licenses. PDFGirlfriend is also written PDFGirlfriend; the established repository name and URL remain PDFGirlfriend.
 
 ### Can I merge PDFs online without uploading them?
 
-Yes. iHatePDF's website loads in your browser, but the merge operation processes selected files on your device. Try the [merge workspace](https://mehbul.github.io/ihatepdf/merge-pdf/) with synthetic samples first. Ordinary site requests still reach the host.
+Yes. PDFGirlfriend's website loads in your browser, but the merge operation processes selected files on your device. Try the [merge workspace](https://pdfgirlfriend.dpdns.org/merge-pdf/) with synthetic samples first. Ordinary site requests still reach the host.
 
-### Can I use iHatePDF offline?
+### Can I use PDFGirlfriend offline?
 
 Do not rely on full offline operation. Site assets must be available and some tools need model downloads or supported browser APIs. On-device processing and offline availability are different requirements.
 
 ### Can I convert a PDF to an editable Word document?
 
-The [PDF to DOCX tool](https://mehbul.github.io/ihatepdf/pdf-to-word/) offers two modes. Keep appearance preserves pages as images in a genuine Word document; page content is not editable. Editable text exports selectable words into paragraphs and removes layout, images and tables. Scans need OCR for editable-text mode.
+The [PDF to DOCX tool](https://pdfgirlfriend.dpdns.org/pdf-to-word/) offers two modes. Keep appearance preserves pages as images in a genuine Word document; page content is not editable. Editable text exports selectable words into paragraphs and removes layout, images and tables. Scans need OCR for editable-text mode.
 
 ### Which PDF compression should I use?
 
-Try [lossless compression](https://mehbul.github.io/ihatepdf/lossless-compress-pdf/) when selectable text and page content matter. Target-size compression rasterizes pages and can lose text selection, forms and accessibility information. Neither method guarantees a particular size. See the [compression guide](https://mehbul.github.io/ihatepdf/guides/reduce-pdf-size/).
+Try [lossless compression](https://pdfgirlfriend.dpdns.org/lossless-compress-pdf/) when selectable text and page content matter. Target-size compression rasterizes pages and can lose text selection, forms and accessibility information. Neither method guarantees a particular size. See the [compression guide](https://pdfgirlfriend.dpdns.org/guides/reduce-pdf-size/).
 
-### Does iHatePDF work on phones and Safari?
+### Does PDFGirlfriend work on phones and Safari?
 
 Engine and emulation checks cover a limited scope. Physical camera capture, native phone downloads and Apple's Safari app have not completed real-device validation. Test your actual device before relying on a workflow.
 
 ### How do I report a problem or contribute?
 
-Use [GitHub Issues](https://github.com/mehbul/ihatepdf/issues) for public bug reports with synthetic examples. Do not attach private documents. Follow [SECURITY.md](SECURITY.md) for private vulnerability reports and [CONTRIBUTING.md](CONTRIBUTING.md) for development contributions. Email [mehbulislam81@gmail.com](mailto:mehbulislam81@gmail.com) for general support. Send a description with an invented example, never private documents or passwords. No response-time guarantee is offered.
+Use [GitHub Issues](https://github.com/mehbul/pdfgirlfriend/issues) for public bug reports with synthetic examples. Do not attach private documents. Follow [SECURITY.md](SECURITY.md) for private vulnerability reports and [CONTRIBUTING.md](CONTRIBUTING.md) for development contributions. Email [mehbulislam81@gmail.com](mailto:mehbulislam81@gmail.com) for general support. Send a description with an invented example, never private documents or passwords. No response-time guarantee is offered.
 
 ## For developers
 
-The app uses static HTML, CSS and JavaScript modules with browser-side PDF processing. Public task guidance, the capability catalog and the AI reading index share the tool registry. [Plain-text task instructions](https://mehbul.github.io/ihatepdf/docs/task-instructions.md) mirror the visible instructions and output expectations. The [launch kit](docs/LAUNCH-KIT.md) contains factual copy for permitted distribution.
+The app uses static HTML, CSS and JavaScript modules with browser-side PDF processing. Public task guidance, the capability catalog and the AI reading index share the tool registry. [Plain-text task instructions](https://pdfgirlfriend.dpdns.org/docs/task-instructions.md) mirror the visible instructions and output expectations. The [launch kit](docs/LAUNCH-KIT.md) contains factual copy for permitted distribution.
 
 ## GitHub Pages beta
 
-The owner selected GitHub Pages for free static hosting. The Pages workflow builds from main, runs handler and AI-readability checks, adapts paths for /ihatepdf/, verifies PDF downloads/rendering/local workers at that subpath, then deploys the artifact. The expected project address is https://mehbul.github.io/ihatepdf/; a successful Pages deployment establishes availability.
+The owner selected GitHub Pages for free static hosting. The Pages workflow builds from main, runs handler and AI-readability checks, publishes at the custom-domain root and verifies PDF downloads, rendering and local workers there, then deploys the artifact. The expected project address is https://pdfgirlfriend.dpdns.org/; a successful Pages deployment establishes availability.
 
 Run node scripts/build-pages.mjs followed by npx playwright test --config=playwright.pages.config.mjs to verify this target. Run npm run build afterwards to restore the ordinary root-path Sites build. The existing Sites project is preserved. Pages publishes a public beta with GitHub Issues as its bug-report channel; search indexing is enabled for Pages, sensitive feedback must not be attached, and physical-device testing remains incomplete. Source is licensed under PolyForm Noncommercial 1.0.0; dependencies retain their own licenses.
 
 Previously named PrivyPDF. Existing browser preferences and optional local metrics retain their original storage keys so an update does not erase them.
 
-iHatePDF is a public beta PDF utility that runs document processing in the browser. The separate Sites host remains owner-private. Editable source lives in `src/` and is built reproducibly with npm.
+PDFGirlfriend is a public beta PDF utility that runs document processing in the browser. The separate Sites host remains owner-private. Editable source lives in `src/` and is built reproducibly with npm.
 
 ## Windows Setup
 

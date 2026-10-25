@@ -1,3 +1,9 @@
+# PDFGirlfriend operations
+
+## Current identity — 25 October 2026
+
+Current public application: https://pdfgirlfriend.dpdns.org/; source: https://github.com/mehbul/pdfgirlfriend. Historical iHatePDF and FolioCove records below retain their original dates and URLs. The separate Sites host remains owner-private. The DigitalPlat dashboard reports expiry on 25 October 2027 and free renewal within 120 days of expiry; the owner must retain domain ownership and renew it. The domain is a delegated dpdns.org address, not the previously discussed paid .in domain. No AdSense eligibility or approval is implied.
+
 # iHatePDF operating plan
 
 Updated after the conversion and trust-label releases. Public beta: https://mehbul.github.io/ihatepdf/. Source and bug reports: https://github.com/mehbul/ihatepdf. The public source and history were authorized by the owner. The separate Sites host remains private. The owner authorized search indexing for the public Pages beta on 3 October 2026.

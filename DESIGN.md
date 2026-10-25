@@ -1,5 +1,5 @@
 ---
-name: iHatePDF
+name: PDFGirlfriend
 description: Premium consumer discovery for private browser PDF tools
 colors:
   coral: "#c52949"
@@ -51,7 +51,7 @@ components:
     padding: "11px 12px"
 ---
 
-# Design System: iHatePDF
+# Design System: PDFGirlfriend
 
 ## Overview
 

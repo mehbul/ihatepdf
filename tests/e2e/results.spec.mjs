@@ -4,7 +4,7 @@ import path from 'node:path';
 import {createPdf,makeFixtureDir,runAndSaveDownload,pdfPageCount,pdfText,installPageGuards,expectNoGuardViolations} from './helpers.mjs';
 import {readableBytes} from '../../src/app/results.mjs';
 
-const base=process.env.FOLIOCOVE_PAGES_TEST?'/ihatepdf':'';
+const base=process.env.FOLIOCOVE_PAGES_TEST?'':'';
 
 test('Prepared download shows actual size and can be downloaded again until selection changes',async({page})=>{
  const dir=await makeFixtureDir(),first=await createPdf(path.join(dir,'one.pdf'),['DOWNLOAD-ONE']),second=await createPdf(path.join(dir,'two.pdf'),['DOWNLOAD-TWO']);
@@ -35,10 +35,10 @@ test('Compression result compares real file sizes without promising a reduction'
 
 test('Public help distinguishes public bug reports from private security disclosures',async({page})=>{
  test.skip(!process.env.FOLIOCOVE_PAGES_TEST,'Help page is public-only');
- await page.goto('/ihatepdf/support/');
- await expect(page.getByRole('link',{name:'GitHub’s private vulnerability reporting form'})).toHaveAttribute('href','https://github.com/mehbul/ihatepdf/security/advisories/new');
+ await page.goto('/support/');
+ await expect(page.getByRole('link',{name:'GitHub’s private vulnerability reporting form'})).toHaveAttribute('href','https://github.com/mehbul/pdfgirlfriend/security/advisories/new');
  await expect(page.locator('article')).toContainText('GitHub reports are public');
- await expect(page.getByRole('link',{name:'mehbulislam81@gmail.com',exact:true})).toHaveAttribute('href','mailto:mehbulislam81@gmail.com?subject=iHatePDF%20support');
+ await expect(page.getByRole('link',{name:'mehbulislam81@gmail.com',exact:true})).toHaveAttribute('href','mailto:mehbulislam81@gmail.com?subject=PDFGirlfriend%20support');
  await expect(page.locator('article')).toContainText('No GitHub account is needed');
  await page.setViewportSize({width:390,height:844});
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);

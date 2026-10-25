@@ -1,3 +1,7 @@
+## Current migration — 25 October 2026
+
+The owner selected PDFGirlfriend as the public brand and supplied the DigitalPlat domain https://pdfgirlfriend.dpdns.org/. The repository is now mehbul/pdfgirlfriend. Public canonicals, sitemap URLs, guide links, ownership files and IndexNow scope use the custom-domain root. Previous iHatePDF/FolioCove names and URLs below are historical evidence, not the current destination. Keep legacy ranking queries comparable and record pdfgirlfriend separately. Publishing or changing a name is not indexing or ranking success. Preserve private Sites access. Do not repeatedly submit older sitemap requests.
+
 # Organic discovery
 
 ## Google, Bing and IndexNow setup — 24 October 2026

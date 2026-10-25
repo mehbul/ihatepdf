@@ -7,21 +7,21 @@ const runtime='.sites-runtime/demo';
 await fs.mkdir(runtime,{recursive:true});
 await fs.mkdir('src/static/demo',{recursive:true});
 for(const name of ['sample-one','sample-two']){
- const pdf=await PDFDocument.create();pdf.addPage().drawText('Synthetic iHatePDF demo: '+name);
+ const pdf=await PDFDocument.create();pdf.addPage().drawText('Synthetic PDFGirlfriend demo: '+name);
  await fs.writeFile(`${runtime}/${name}.pdf`,await pdf.save());
 }
-const server=spawn(process.execPath,['scripts/dev-server.mjs'],{env:{...process.env,PORT:'4175',FOLIOCOVE_BASE_PATH:'/ihatepdf'},stdio:'ignore',windowsHide:true});
+const server=spawn(process.execPath,['scripts/dev-server.mjs'],{env:{...process.env,PORT:'4175',FOLIOCOVE_BASE_PATH:''},stdio:'ignore',windowsHide:true});
 let browser;
 try{
  for(let n=0;n<100;n++){
-  if(await fetch('http://127.0.0.1:4175/ihatepdf/').then(r=>r.ok).catch(()=>false))break;
+  if(await fetch('http://127.0.0.1:4175/').then(r=>r.ok).catch(()=>false))break;
   await new Promise(resolve=>setTimeout(resolve,100));
  }
  browser=await chromium.launch();
  const context=await browser.newContext({viewport:{width:1100,height:820},recordVideo:{dir:runtime,size:{width:1100,height:820}},reducedMotion:'reduce'});
  const page=await context.newPage();
- await page.goto('http://127.0.0.1:4175/ihatepdf/');await page.waitForTimeout(5000);
- await page.goto('http://127.0.0.1:4175/ihatepdf/merge-pdf/');await page.waitForTimeout(5000);
+ await page.goto('http://127.0.0.1:4175/');await page.waitForTimeout(5000);
+ await page.goto('http://127.0.0.1:4175/merge-pdf/');await page.waitForTimeout(5000);
  await page.getByTestId('file-input').setInputFiles([`${runtime}/sample-one.pdf`,`${runtime}/sample-two.pdf`]);await page.waitForTimeout(8000);
  const download=page.waitForEvent('download');await page.getByTestId('run-tool').click();
  const result=await download;await result.saveAs(`${runtime}/merged.pdf`);

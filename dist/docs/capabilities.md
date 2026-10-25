@@ -1,6 +1,6 @@
-# iHatePDF capabilities
+# PDFGirlfriend capabilities
 
-iHatePDF (also written iHatePDF; previously named iHatePDF) is a browser PDF workspace. Release status: private-beta. Operator name supplied: iHatePDF, India. Support: mehbulislam81@gmail.com. Do not send documents or private information.
+PDFGirlfriend (also written PDFGirlfriend; previously named PDFGirlfriend) is a browser PDF workspace. Release status: private-beta. Operator name supplied: PDFGirlfriend, India. Support: mehbulislam81@gmail.com. Do not send documents or private information.
 
 ## Processing and privacy
 
@@ -94,8 +94,8 @@ Selected documents are processed on-device; there is no document-upload endpoint
 - Open: https://foliocove-tools.mehbulislam81.chatgpt.site/?tool=quick
 - Status: implemented
 - Input MIME types: application/pdf
-- Purpose: Describe several changes once. iHatePDF runs them locally in one pass.
-- Boundary: Describe several changes once. iHatePDF runs them locally in one pass.
+- Purpose: Describe several changes once. PDFGirlfriend runs them locally in one pass.
+- Boundary: Describe several changes once. PDFGirlfriend runs them locally in one pass.
 
 ### Organize pages
 

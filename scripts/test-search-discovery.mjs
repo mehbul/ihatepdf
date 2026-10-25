@@ -6,7 +6,7 @@ import path from 'node:path';
 import {searchDiscovery as config} from '../src/content/search-discovery.mjs';
 const home=config.origin+'/',tool=config.origin+'/jpg-to-pdf/';
 assert.equal(publicUrl(home),home);
-for(const url of ['https://example.com/','https://mehbul.github.io/','https://mehbul.github.io/ihatepdf-else/','https://mehbul.github.io/ihatepdf/../private/','https://mehbul.github.io/ihatepdf/?document=private','http://mehbul.github.io/ihatepdf/'])assert.throws(()=>publicUrl(url));
+for(const url of ['https://example.com/','https://mehbul.github.io/','https://pdfgirlfriend.dpdns.org-else/','https://pdfgirlfriend.dpdns.org/?document=private','http://mehbul.github.io/ihatepdf/'])assert.throws(()=>publicUrl(url));
 assert.deepEqual(sitemapUrls(`<urlset><url><loc>${home}</loc></url><url><loc>${home}</loc></url><url><loc>${tool}</loc></url></urlset>`),[home,tool]);
 assert.throws(()=>sitemapUrls('<urlset/>'));
 assert.deepEqual(changedUrls({[home]:'same',[tool]:'old'},{[home]:'same',[tool]:'new'}),[tool]);

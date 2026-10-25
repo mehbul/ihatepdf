@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 import path from 'node:path';
 import {createPdf,makeFixtureDir,runAndSaveDownload,pdfPageCount,pdfText,installPageGuards,expectNoGuardViolations} from './helpers.mjs';
-const base=process.env.FOLIOCOVE_PAGES_TEST?'/ihatepdf':'';
+const base=process.env.FOLIOCOVE_PAGES_TEST?'':'';
 
 test('A merged PDF passes through page organization and lossless compression without choosing files again',async({page})=>{
  const dir=await makeFixtureDir(),a=await createPdf(path.join(dir,'first.pdf'),['FLOW-A','FLOW-B']),b=await createPdf(path.join(dir,'second.pdf'),['FLOW-C']);
@@ -17,7 +17,7 @@ test('A merged PDF passes through page organization and lossless compression wit
  await panel.getByRole('button',{name:'Use this PDF',exact:true}).click();
  await expect(page.getByTestId('tool-title')).toHaveText('Visual page organizer');await expect(page.getByTestId('tool-title')).toBeFocused();
  await expect(page.locator('.intro h1')).toHaveText('Visual page organizer');
- await expect(page).toHaveTitle('Visual page organizer — iHatePDF');
+ await expect(page).toHaveTitle('Visual page organizer — PDFGirlfriend');
  if(process.env.FOLIOCOVE_PAGES_TEST){
   await expect(page.locator('.task-breadcrumbs [aria-current="page"]')).toHaveText('Visual page organizer');
   await expect(page.getByRole('region',{name:'Merge PDFs guide',exact:true})).toBeHidden();

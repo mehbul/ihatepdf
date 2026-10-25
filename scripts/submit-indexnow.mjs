@@ -6,7 +6,7 @@ import {searchDiscovery as config} from '../src/content/search-discovery.mjs';
 
 export function publicUrl(input) {
   const url=new URL(input),base=new URL(config.origin+'/');
-  if(url.origin!==base.origin||!url.pathname.startsWith(base.pathname)||url.search||url.hash||url.username||url.password)throw Error('Only public iHatePDF canonical URLs may be submitted.');
+  if(url.origin!==base.origin||!url.pathname.startsWith(base.pathname)||url.search||url.hash||url.username||url.password)throw Error('Only public PDFGirlfriend canonical URLs may be submitted.');
   return url.href;
 }
 export function sitemapUrls(xml) {

@@ -3,7 +3,7 @@ import path from 'node:path';
 import fs from 'node:fs/promises';
 import {PDFDocument,PDFName} from 'pdf-lib';
 import {createDocumentPhoto,makeFixtureDir,runAndSaveDownload,pdfText,installPageGuards,expectNoGuardViolations} from './helpers.mjs';
-const base=process.env.FOLIOCOVE_PAGES_TEST?'/ihatepdf':'';
+const base=process.env.FOLIOCOVE_PAGES_TEST?'':'';
 
 test('ordered pictures retain per-image edits and export with paper, margins and page numbers',async({page})=>{
   const dir=await makeFixtureDir(),first=await createDocumentPhoto(path.join(dir,'page-10.png')),second=await createDocumentPhoto(path.join(dir,'page-2.png'));
