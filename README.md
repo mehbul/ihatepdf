@@ -33,6 +33,19 @@ PDFGirlfriend is a free, source-available, noncommercial-licensed browser PDF wo
 | Add a signature to a PDF | [Sign PDF](https://pdfgirlfriend.dpdns.org/sign-pdf/) | A visible typed signature mark, not certificate signing or identity verification. |
 | Make scanned text searchable | [English OCR](https://pdfgirlfriend.dpdns.org/ocr-pdf/) | Local recognition with an English model download; review words and numbers for errors. |
 
+## More ways to work with PDFs
+
+| Need | Tool and limits |
+| --- | --- |
+| PDF merger or PDF combiner | [Combine PDF files](https://pdfgirlfriend.dpdns.org/merge-pdf/) in your chosen order. |
+| PDF compressor or PDF size reducer | [Lossless PDF compression](https://pdfgirlfriend.dpdns.org/lossless-compress-pdf/) preserves selectable text; size reduction varies. [Target-size compression](https://pdfgirlfriend.dpdns.org/compress-pdf/) rasterizes pages and may miss the target. |
+| Rotate, reorder or delete PDF pages | [Organize PDF pages](https://pdfgirlfriend.dpdns.org/organize-pdf/) with thumbnails; inspect forms and annotations afterwards. |
+| PNG to PDF, WebP to PDF or photo to PDF | [Convert pictures to PDF](https://pdfgirlfriend.dpdns.org/jpg-to-pdf/) with filters and page-layout controls; no OCR is added. |
+| Scanned PDF to searchable PDF | [English OCR](https://pdfgirlfriend.dpdns.org/ocr-pdf/) adds recognized text; review words, numbers and alignment. |
+| Password protect or unlock a PDF | [Protect PDF](https://pdfgirlfriend.dpdns.org/?tool=protect) uses AES-256 encryption. [Unlock PDF](https://pdfgirlfriend.dpdns.org/?tool=unlock) requires the document password. |
+| Draw a signature on a PDF | [Draw a signature](https://pdfgirlfriend.dpdns.org/?tool=drawsign) adds a visible mark, not a digital certificate. |
+| Add a PDF watermark | [Text watermark](https://pdfgirlfriend.dpdns.org/?tool=watermark) or [image watermark](https://pdfgirlfriend.dpdns.org/?tool=imagewatermark); inspect placement before sharing. |
+
 ## Pictures to PDF with filters
 
 Open [Images to PDF](https://pdfgirlfriend.dpdns.org/jpg-to-pdf/) and select pictures in order. Use the file arrows, drag the page buttons, sort by filename or reverse the order. Choose an image to edit its original/grayscale/black-and-white/document-scan/sepia filter, brightness, contrast, saturation, sharpening, threshold, rotation, flips, inversion, auto contrast and percentage crop. Reset one image, duplicate it or apply its adjustments to all images.
