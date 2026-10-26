@@ -1,6 +1,6 @@
-# PDFGirlfriend — Free, source-available PDF tools
+# PDFGirlfriend — Free browser PDF tools: merge, split, compress & convert
 
-**Merge, split, compress and convert PDFs in your browser. Your documents are processed on your device, with no account or document uploads.**
+**Merge PDF files, split and extract pages, compress PDFs, convert JPG to PDF, and convert PDF to Word in your browser. Your documents are processed on your device, with no account or document uploads.**
 
 [Open PDFGirlfriend](https://pdfgirlfriend.dpdns.org/) · [Watch the merge demo](https://pdfgirlfriend.dpdns.org/demo/) · [Watch page extraction](https://pdfgirlfriend.dpdns.org/demo/extract-pdf/) · [Choose a PDF converter](https://pdfgirlfriend.dpdns.org/pdf-converter/) · [Browse tools and limits](https://pdfgirlfriend.dpdns.org/tools/) · [Get help](https://pdfgirlfriend.dpdns.org/support/) · [About and common questions](https://pdfgirlfriend.dpdns.org/about/)
 
@@ -105,6 +105,12 @@ Use [GitHub Issues](https://github.com/mehbul/pdfgirlfriend/issues) for public b
 
 The app uses static HTML, CSS and JavaScript modules with browser-side PDF processing. Public task guidance, the capability catalog and the AI reading index share the tool registry. [Plain-text task instructions](https://pdfgirlfriend.dpdns.org/docs/task-instructions.md) mirror the visible instructions and output expectations. The [launch kit](docs/LAUNCH-KIT.md) contains factual copy for permitted distribution.
 
+## Support and contribute
+
+If PDFGirlfriend helps with your PDFs, [star this repository](https://github.com/mehbul/pdfgirlfriend) to bookmark it and help others discover it. To improve a tool, [fork the source](https://github.com/mehbul/pdfgirlfriend/fork), follow the [contribution guide](CONTRIBUTING.md), and open a pull request. Forks and modifications remain subject to [the source license](LICENSING.md); commercial reuse requires separate permission.
+
+Useful contributions include reproducible bug reports with synthetic files, clearer tool instructions, and real-device testing recorded with the actual browser and device. Never attach private documents. Maintainers can use the [GitHub discovery guide](docs/GITHUB-DISCOVERY.md) to keep repository topics, links and capability claims aligned.
+
 ## GitHub Pages beta
 
 The owner selected GitHub Pages for free static hosting. The Pages workflow builds from main, runs handler and AI-readability checks, publishes at the custom-domain root and verifies PDF downloads, rendering and local workers there, then deploys the artifact. The expected project address is https://pdfgirlfriend.dpdns.org/; a successful Pages deployment establishes availability.
@@ -120,6 +126,8 @@ PDFGirlfriend is a public beta PDF utility that runs document processing in the 
 Install Node.js 24 and npm 10 or newer, then install dependencies from the lockfile:
 
 ```powershell
+git clone https://github.com/mehbul/pdfgirlfriend.git
+cd pdfgirlfriend
 npm ci
 ```
 
