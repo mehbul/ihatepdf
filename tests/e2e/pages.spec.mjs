@@ -62,7 +62,7 @@ test('Office conversion routes create real workbooks, image slides and text PDFs
  await open('powerpoint-to-pdf');await page.locator('#conversion-mode').selectOption('text');await page.getByTestId('file-input').setInputFiles(source);
  expect(await pdfText(await runAndSaveDownload(page,dir,'ppt-to-pdf.pdf'))).toContain('FC-SLIDE-TEXT');
  await page.goto('/pdf-converter/');
- await expect(page.locator('h1')).toHaveText('Free PDF converter — choose the output you need');
+ await expect(page.locator('h1')).toHaveText('PDF converter — Word, Excel, PowerPoint & images');
  await expect(page.getByRole('navigation',{name:'PDF conversion tools'}).locator('a')).toHaveCount(9);
  await expect(page.locator('article')).toContainText('not editable slide objects');
  expect(external).toEqual([]);expect(errors).toEqual([]);
