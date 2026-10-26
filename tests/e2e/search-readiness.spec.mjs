@@ -1,5 +1,7 @@
 import {test,expect} from '@playwright/test';
 import {searchDiscovery} from '../../src/content/search-discovery.mjs';
+import {additionalSearchTopics} from '../../src/content/search-topics.mjs';
+import {toolRegistry} from '../../src/content/tools.mjs';
 
 test.skip(!process.env.FOLIOCOVE_PAGES_TEST,'Public discovery metadata belongs to the Pages publication.');
 test('Every public sitemap page exposes consistent identity, sharing and structured facts',async({request,page})=>{
@@ -33,4 +35,30 @@ test('Every public sitemap page exposes consistent identity, sharing and structu
   await expect(page.getByRole('heading',{name:'Do you upload my documents?',exact:true})).toBeVisible();
   await expect(page.locator('article')).toContainText('without an app account');
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});
+
+test('Extended task terms and local MCP setup are usable without JavaScript',async({browser,baseURL,request})=>{
+ const context=await browser.newContext({baseURL,javaScriptEnabled:false,viewport:{width:390,height:844}});
+ try{
+  const page=await context.newPage();await page.goto('/tools/');
+  const section=page.getByRole('region',{name:'More PDF tasks and formats'});
+  const registry=toolRegistry();
+  for(const topic of additionalSearchTopics){
+   const link=section.getByRole('link',{name:topic.label,exact:true});
+   await expect(link).toHaveCount(1);
+   const url=new URL(await link.getAttribute('href'),baseURL);
+   if(url.searchParams.has('tool'))expect(registry[url.searchParams.get('tool')]).toBeTruthy();
+   else expect((await request.get(url.pathname)).status()).toBe(200);
+  }
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await section.getByRole('link',{name:'Set up local MCP tool discovery'}).click();
+  await expect(page.locator('h1')).toHaveText('PDFGirlfriend MCP server — local setup and tool discovery');
+  await expect(page.locator('article')).toContainText('There is no hosted HTTP MCP endpoint');
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  const manifest=await(await request.get('/mcp.json')).json();
+  expect(manifest.mcp.transport).toBe('stdio');expect(manifest.documentInputsAccepted).toBe(false);
+  expect(manifest.mcp.remoteEndpoint).toBeNull();expect(manifest.mcp.tools).toHaveLength(3);
+  const guide=await(await request.get('/docs/mcp.md')).text();expect(guide).toContain('npm ci --prefix tools/mcp');
+  expect(await(await request.get('/llms.txt')).text()).toContain('/mcp/');
+ }finally{await context.close();}
 });

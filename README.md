@@ -118,6 +118,22 @@ Use [GitHub Issues](https://github.com/mehbul/pdfgirlfriend/issues) for public b
 
 The app uses static HTML, CSS and JavaScript modules with browser-side PDF processing. Public task guidance, the capability catalog and the AI reading index share the tool registry. [Plain-text task instructions](https://pdfgirlfriend.dpdns.org/docs/task-instructions.md) mirror the visible instructions and output expectations. The [launch kit](docs/LAUNCH-KIT.md) contains factual copy for permitted distribution.
 
+### More formats and document tasks
+
+The [extended task guide](https://pdfgirlfriend.dpdns.org/tools/#more-pdf-tasks) links PDF to PNG, PDF to TXT, PDF to Markdown, PDF to JSON, local HTML to PDF, and experimental text-only EPUB/ODT/RTF to PDF. It also covers searchable English OCR, splitting every N pages, cropping margins, resizing to A4/Letter, grayscale output, fillable PDF forms, form flattening, Bates numbering, QR stamps, metadata fields and PDF comparison. Each task lists its output limits before you choose a file.
+
+### Local MCP server
+
+The [PDFGirlfriend MCP server](tools/mcp/README.md) is hosted as source in this GitHub repository and runs locally over stdio. It lets compatible agents discover tools, read fidelity limits and plan manual browser workflows. It does not accept or process documents, open the browser or offer a hosted HTTP endpoint. See the [public setup page](https://pdfgirlfriend.dpdns.org/mcp/) and [full setup guide](docs/MCP.md).
+
+```powershell
+npm ci --prefix tools/mcp
+npm test --prefix tools/mcp
+npm run config --prefix tools/mcp --silent
+```
+
+Run these commands from a complete repository checkout with Node.js 24. The last command generates client configuration with absolute paths; merge it using your client's settings instructions. Share generic task words only: the MCP client or model provider may receive conversations and tool calls. Current source licensing applies to the MCP code as well.
+
 ## Support and contribute
 
 If PDFGirlfriend helps with your PDFs, [star this repository](https://github.com/mehbul/pdfgirlfriend) to bookmark it and help others discover it. To improve a tool, [fork the source](https://github.com/mehbul/pdfgirlfriend/fork), follow the [contribution guide](CONTRIBUTING.md), and open a pull request. Forks and modifications remain subject to [the source license](LICENSING.md); commercial reuse requires separate permission.

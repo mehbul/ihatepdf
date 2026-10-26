@@ -17,10 +17,11 @@ PDFGirlfriend already has a visual README, task links, synthetic examples, scope
 | Search intent | Repository topics |
 | --- | --- |
 | General PDF workspace | `pdf`, `pdf-tools`, `pdf-editor`, `pdf-converter` |
-| Organizing and reducing files | `merge-pdf`, `pdf-merger`, `split-pdf`, `compress-pdf`, `pdf-compressor` |
+| Organizing and reducing files | `merge-pdf`, `split-pdf`, `compress-pdf` |
 | Image and Office conversion | `jpg-to-pdf`, `pdf-to-jpg`, `pdf-to-word`, `word-to-pdf` |
 | Signing and scanned documents | `sign-pdf`, `ocr` |
 | Processing model and implementation | `privacy`, `client-side`, `source-available` |
+| Local agent integration | `mcp`, `mcp-server` |
 | Alternative workflows | `ilovepdf-alternative`, `smallpdf-alternative` |
 
 These terms describe implemented workflows, not universal fidelity or security. Signing adds a visual mark, not a certificate signature. English OCR needs a model download. Office conversion has image-based and limited text modes; read the task-specific limits. Redaction remains experimental; verified sanitization and PDF/A are unavailable. No affiliation with comparison brands is implied.
@@ -49,4 +50,8 @@ The README and public homepage now connect common phrases such as PDF combiner, 
 
 ## Alternative and conversion search terms
 
-The public homepage description and visible guidance now cover an iLovePDF alternative, Word to PDF, PDF to Word and PDF to Excel. Linked format explanations also cover Excel to PDF, PDF to PowerPoint, PowerPoint to PDF, JPG/PNG to PDF and PDF to JPG. The converter chooser has format-specific metadata; Word task descriptions name their common conversion terms. Existing comparison pages remain publisher-disclosed and retain their source-check dates. The homepage explains that the published app has no hosted MCP endpoint: capability JSON, task instructions and llms.txt are discovery files, not a Model Context Protocol server. Unpublished local integration drafts are not advertised as released features.
+The public homepage description and visible guidance now cover an iLovePDF alternative, Word to PDF, PDF to Word and PDF to Excel. Linked format explanations also cover Excel to PDF, PDF to PowerPoint, PowerPoint to PDF, JPG/PNG to PDF and PDF to JPG. The converter chooser has format-specific metadata; Word task descriptions name their common conversion terms. Existing comparison pages remain publisher-disclosed and retain their source-check dates. The homepage explains that the published app has no hosted MCP endpoint: capability JSON, task instructions and llms.txt are discovery files, not a Model Context Protocol server. The local stdio integration is now published with setup instructions and protocol tests; there is still no hosted HTTP endpoint.
+
+## Extended task guide and local MCP publication
+
+A shared task-phrase module now connects 24 additional tasks to registered tool IDs and explicit output limits. Public /tools/ content and MCP search use these phrases. The converter chooser lists 14 formats. The /mcp/ page, /docs/mcp.md and /mcp.json document the GitHub-hosted local stdio server. The public sitemap and llms.txt include its setup page. Repository topics replace the redundant pdf-merger/pdf-compressor aliases with mcp/mcp-server while retaining merge-pdf/compress-pdf. Automated tests exercise a real SDK client/server and the additional public links; no universal client-compatibility or ranking claim is made.

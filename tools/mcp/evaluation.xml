@@ -1,0 +1,12 @@
+<evaluation>
+  <qa_pair><question>Discover the Word export tool that offers page-image appearance, then inspect it. Which native output extension does it create?</question><answer>DOCX</answer></qa_pair>
+  <qa_pair><question>Find searchable scanned-PDF conversion, inspect its limits and read the policy. Which recognition language is supported?</question><answer>English</answer></qa_pair>
+  <qa_pair><question>Discover hidden-data cleanup tools and try a workflow with the one marked unavailable. What is the stable ID of the rejected sanitization tool?</question><answer>sanitize</answer></qa_pair>
+  <qa_pair><question>Discover the extractive summary tool and the browser AI summarizer. Inspect both statuses. Which ID depends on browser AI APIs?</question><answer>aisummary</answer></qa_pair>
+  <qa_pair><question>Discover text comparison and visual comparison, then inspect their limitations. Which ID displays corresponding pages side by side?</question><answer>visualcompare</answer></qa_pair>
+  <qa_pair><question>Find both PDF compression workflows and inspect their limits. Which ID optimizes structure without rasterizing text?</question><answer>lossless</answer></qa_pair>
+  <qa_pair><question>Discover PDF protection and unlocking, then read the policy resource. Does the MCP accept a document password to perform unlocking?</question><answer>false</answer></qa_pair>
+  <qa_pair><question>Find PDF-to-PowerPoint conversion and inspect its output limits. Is original page text editable as individual slide objects?</question><answer>false</answer></qa_pair>
+  <qa_pair><question>Find the PDF-to-PNG tools, inspect them and plan the all-pages export. Which ID produces a ZIP of all page images?</question><answer>allpng</answer></qa_pair>
+  <qa_pair><question>Discover merge and lossless compression, then plan them in that order. What is the plan's executesDocuments field?</question><answer>false</answer></qa_pair>
+</evaluation>

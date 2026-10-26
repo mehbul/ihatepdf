@@ -19,6 +19,9 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm audit --omit=dev --audit-level=moderate
+      - run: npm ci --prefix tools/mcp
+      - run: npm audit --prefix tools/mcp --omit=dev --audit-level=moderate
+      - run: npm test --prefix tools/mcp
       - run: npm run build
       - run: npm test
       - run: node scripts/test-ai-readiness.mjs
