@@ -46,3 +46,7 @@ Keep README task names, repository metadata and generated discovery content cons
 ## Expanded task vocabulary — 26 October 2026
 
 The README and public homepage now connect common phrases such as PDF combiner, PDF size reducer, PNG to PDF, searchable PDF, password protect PDF, PDF watermark and page numbers to their actual tools and limits. Seven task descriptions now explain organization, target compression, photo scanning, OCR, text overlays, typed signatures and read-only privacy inspection. Public metadata and social previews use these descriptions consistently. GitHub topics replace generic browser/language tags with `pdf-merger` and `pdf-compressor`, keeping the 20-topic maximum. No search-volume or ranking claim is made.
+
+## Alternative and conversion search terms
+
+The public homepage description and visible guidance now cover an iLovePDF alternative, Word to PDF, PDF to Word and PDF to Excel. Linked format explanations also cover Excel to PDF, PDF to PowerPoint, PowerPoint to PDF, JPG/PNG to PDF and PDF to JPG. The converter chooser has format-specific metadata; Word task descriptions name their common conversion terms. Existing comparison pages remain publisher-disclosed and retain their source-check dates. The homepage explains that the published app has no hosted MCP endpoint: capability JSON, task instructions and llms.txt are discovery files, not a Model Context Protocol server. Unpublished local integration drafts are not advertised as released features.
