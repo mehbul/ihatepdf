@@ -207,11 +207,11 @@ test('Discovery opens the complete catalog without an Everyday tools filter',asy
 test('Pages subpath loads tools, navigation, PDF renderer and local worker downloads',async({page})=>{
  const failures=[];page.on('pageerror',e=>failures.push(e.message));page.on('response',r=>{if(r.status()>=400)failures.push(r.url())});
  await page.goto('/');await expect(page.locator('#core-tools a')).toHaveCount(36);
- await expect(page).toHaveTitle('PDFGirlfriend — Free tools to merge, split & compress');
+ await expect(page).toHaveTitle('PDFGirlfriend — Free PDF tools: merge, compress & convert');
  await expect(page.locator('h1')).toHaveText('PDFGirlfriend tools');
  await page.locator('.sidebar [data-tool="split"]').click();
  await expect(page.locator('#tool-title')).toHaveText('Extract pages');
- await expect(page).toHaveTitle('PDFGirlfriend — Free tools to merge, split & compress');
+ await expect(page).toHaveTitle('PDFGirlfriend — Free PDF tools: merge, compress & convert');
  await expect(page.locator('.brand')).toContainText('PUBLIC BETA');
  await expect(page.locator('meta[name=robots]')).toHaveAttribute('content','index,follow');
  await expect(page.locator('meta[name=google-site-verification]')).toHaveAttribute('content',searchDiscovery.googleVerification);
