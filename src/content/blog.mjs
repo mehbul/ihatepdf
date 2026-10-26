@@ -3,6 +3,9 @@ import {guidePage} from './discovery.mjs';
 import {escapeHtml as e} from './ai.mjs';
 const base='',origin='https://pdfgirlfriend.dpdns.org';
 const date='2026-10-03';
+// Real editorial revision: current identity, licensing and capability wording.
+// Keep publication and competitor-source verification dates independent.
+const editorialRevision='2026-10-26';
 export const articles={
  'smallpdf-alternative':{
   title:'A free Smallpdf alternative for PDFs without uploads',
@@ -51,11 +54,11 @@ export const articles={
 const links=()=>Object.entries(articles).map(([slug,a])=>`<li><a href="${base}/blog/${slug}/">${e(a.title)}</a><p>${e(a.intro)}</p></li>`).join('');
 function render(slug,a){
  const url=`${origin}/blog/${slug}/`;
- const publishedOn=a.publishedOn||date,modifiedOn=a.checkedOn||publishedOn;
+ const publishedOn=a.publishedOn||date,modifiedOn=a.modifiedOn||editorialRevision;
  const dateLabel=value=>new Intl.DateTimeFormat('en-GB',{dateStyle:'long',timeZone:'UTC'}).format(new Date(value+'T00:00:00Z'));
  const schema={'@context':'https://schema.org','@type':'BlogPosting',headline:a.title,description:a.intro,url,mainEntityOfPage:url,datePublished:publishedOn,dateModified:modifiedOn,author:{'@type':'Organization',name:'PDFGirlfriend',url:origin+'/'} ,publisher:{'@type':'Organization',name:'PDFGirlfriend',url:origin+'/'}};
  const checked=a.checkedOn?` · Sources checked <time datetime="${a.checkedOn}">${dateLabel(a.checkedOn)}</time>`:'';
- const body=`<p>By PDFGirlfriend · Published <time datetime="${publishedOn}">${dateLabel(publishedOn)}</time>${checked}</p>${a.body}<h2>Related articles</h2><ul>${links()}</ul>`;
+ const body=`<p>By PDFGirlfriend · Published <time datetime="${publishedOn}">${dateLabel(publishedOn)}</time> · Updated <time datetime="${modifiedOn}">${dateLabel(modifiedOn)}</time>${checked}</p>${a.body}<h2>Related articles</h2><ul>${links()}</ul>`;
  return guidePage(slug,a.title,a.intro,body,'blog').replace('</head>',`<meta property="og:type" content="article"><meta property="og:title" content="${e(a.title)}"><meta property="og:description" content="${e(a.intro)}"><meta property="og:url" content="${url}"><script type="application/ld+json">${JSON.stringify(schema).replaceAll('<','\\u003c')}</script></head>`);
 }
 export async function buildBlog(){

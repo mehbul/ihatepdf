@@ -281,6 +281,9 @@ test('Comparison blog is discoverable, sourced and usable on mobile',async({page
  const smallpdf=await page.locator('script[type="application/ld+json"]').allTextContents();
  const post=smallpdf.map(x=>JSON.parse(x)).find(x=>x['@type']==='BlogPosting');
  expect(post.headline).toBe(await page.locator('h1').textContent());expect(post.datePublished).toBe('2026-10-10');
+ expect(post.dateModified).toBe('2026-10-26');
+ await expect(page.locator('article')).toContainText('Updated 26 October 2026');
+ await expect(page.locator('article')).toContainText('Sources checked 10 October 2026');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  const sitemap=await(await page.request.get('/sitemap.xml')).text();expect(sitemap).toContain('https://pdfgirlfriend.dpdns.org/blog/smallpdf-alternative/');
 });
